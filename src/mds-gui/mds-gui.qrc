@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/props2metrics.png</file>
+        <file>icons/MdsSpace.png</file>
+        <file>icons/metricExplorer.png</file>
+        <file>icons/metric2props.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MDS>
+    <Kernel type="Euclidean1f"/>
+    <Grid name = "grid">
+        <Property name="mltest__real0"></Property>
+        <Property name="mltest__real1"></Property>
+        <Property name="mltest__real2"></Property>
+        <Property name="mltest__real3"></Property>
+        <Property name="mltest__real4"></Property>
+    </Grid>
+    <MetricData>
+        <Metric name="ArithmeticMean"></Metric>
+        <Metric name="Variance"></Metric>
+        <Metric name="pixelWise"></Metric>
+    </MetricData>
+</MDS>

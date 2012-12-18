@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VarianceData</class>
+ <widget class="QWidget" name="VarianceData">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>229</width>
+    <height>484</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Compute Variance</string>
+  </property>
+  <property name="AlgorithmCategory" stdset="0">
+   <string>Data</string>
+  </property>
+  <property name="AlgorithmDescription" stdset="0">
+   <string>Compute the variance</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Name of Data</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Name"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="GridSelector" name="GridName"/>
+   </item>
+   <item>
+    <widget class="OrderedPropertySelector" name="PropertyNames"/>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>71</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>OrderedPropertySelector</class>
+   <extends>GsTLGroupBox</extends>
+   <header>GsTLAppli/extra/qtplugins/selectors.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GsTLGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>GsTLAppli/extra/qtplugins/selectors.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GridSelector</class>
+   <extends>QTabWidget</extends>
+   <header>GsTLAppli/extra/qtplugins/selectors.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>GridName</sender>
+   <signal>activated(QString)</signal>
+   <receiver>PropertyNames</receiver>
+   <slot>show_properties(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>114</x>
+     <y>264</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

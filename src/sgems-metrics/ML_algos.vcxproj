@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{587A5B0E-DEF0-46B8-91EB-B1045F46FFCA}</ProjectGuid>
+    <RootNamespace>Geobody</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SGEMS_BUILD)\GsTLAppli-qt4;$(SGEMS_BUILD)\GsTL;$(BOOSTDIR);E:\dev\lib\eigen;E:\dev\SGeMS-dev\Qt\4.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GSTL_NOWARNING_2;GSTL_NOCHECK_2;WIN32;_DEBUG;_WINDOWS;_USRDLL;UNICODE;QT_DLL;SOQT_DLL;COIN_DLL;QWT_DLL;GEOSTAT_EXPORTS;QT_THREAD_SUPPORT;GSTL_DEBUG_1;GSTL_DEBUG_2;QT_LARGEFILE_SUPPORT;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;QtXml4.lib;QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SGEMS_BUILD)\GsTLAppli-qt4\plugins\Geostat\ML_algos.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(SGEMS_BUILD)\GsTLAppli-qt4\lib\win32\debug;E:\dev\SGeMS-dev\Qt\4.7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);c:\code-dev\eigen\;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;$(QTDIRx64)\include\QtSql;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>METRICSACTIONS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;QtXmld4.lib;QtCored4.lib;QtSqld4.lib;GsTL_item_model.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\debug\plugins\Geostat\sgems-metrics.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(AR2TECH_SGEMS_DIR)\lib\x64\debug;$(QTDIRx64)\lib;..\GsTL_item_model;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX64</TargetMachine>
+      <ImportLibrary>sgems-metrics.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SGEMS_BUILD)\GsTLAppli-qt4;$(SGEMS_BUILD)\GsTL;$(BOOSTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SGEMS_BUILD)\GsTLAppli-qt4\plugins\Geostat\ML_algos.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(SGEMS_BUILD)\GsTLAppli-qt4\lib\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./;../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);c:\code-dev\eigen\;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;$(QTDIRx64)\include\QtSql;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>METRICSACTIONS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;QtXml4.lib;QtCore4.lib;QtSql4.lib;GsTL_item_model.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\release\plugins\Geostat\ML_algos.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(AR2TECH_SGEMS_DIR)\lib\x64\release;$(QTDIRx64)\lib;..\GsTL_item_model;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="actions\externalresponseioaction.cpp" />
+    <ClCompile Include="actions\UncertainSpaceIOAction.cpp" />
+    <ClCompile Include="filters\externalresponsefilter.cpp" />
+    <ClCompile Include="filters\externalresponseinputfilter.cpp" />
+    <ClCompile Include="filters\MDSUncertaintySpaceFilters.cpp" />
+    <ClCompile Include="filters\MDSUncertaintySpaceInputFilter.cpp" />
+    <ClCompile Include="filters\MDSUncertaintySpaceOutputFilter.cpp" />
+    <ClCompile Include="GenerateMetricsAction.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);c:\code-dev\eigen\;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;E:\dev\work\sgems\GsTL_item_model;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);c:\code-dev\eigen\;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="kmeans_action.cpp" />
+    <ClCompile Include="mds_action.cpp" />
+    <ClCompile Include="Metric_algo_stats.cpp" />
+    <ClCompile Include="MetricFilter.cpp" />
+    <ClCompile Include="MetricFilterCollection.cpp" />
+    <ClCompile Include="MetricFilterPackage.cpp" />
+    <ClCompile Include="metric_gbody_algo.cpp" />
+    <ClCompile Include="ml_library_init.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="actions\externalresponseioaction.h" />
+    <ClInclude Include="actions\UncertainSpaceIOAction.h" />
+    <ClInclude Include="filters\externalresponsefilter.h" />
+    <ClInclude Include="filters\externalresponseinputfilter.h" />
+    <ClInclude Include="metrics_action_common.h" />
+    <ClInclude Include="filters\MDSUncertaintySpaceFilters.h" />
+    <ClInclude Include="filters\MDSUncertaintySpaceInputFilter.h" />
+    <ClInclude Include="filters\MDSUncertaintySpaceOutputFilter.h" />
+    <ClInclude Include="GenerateMetricsAction.h" />
+    <ClInclude Include="kmeans.h" />
+    <ClInclude Include="kmeans_action.h" />
+    <ClInclude Include="mds_action.h" />
+    <ClInclude Include="Metric_algo.h" />
+    <ClInclude Include="Metric_algo_stats.h" />
+    <ClInclude Include="MetricFilter.h" />
+    <ClInclude Include="MetricFilterCollection.h" />
+    <ClInclude Include="MetricFilterPackage.h" />
+    <ClInclude Include="metric_gbody_algo.h" />
+    <ClInclude Include="ml_library_constants.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

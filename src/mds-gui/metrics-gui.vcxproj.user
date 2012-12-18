@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <QTDIR>C:\Qt\4.7.3-x64</QTDIR>
+    <LocalDebuggerEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PATH=$(QTDIR)\bin%3b$(PATH)</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PATH=$(QTDIR)\bin%3b$(PATH)</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PATH=$(QTDIR)\bin%3b$(PATH)</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PATH=$(QTDIR)\bin%3b$(PATH)</LocalDebuggerEnvironment>
+    <LocalDebuggerDebuggerType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Auto</LocalDebuggerDebuggerType>
+    <DebuggerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

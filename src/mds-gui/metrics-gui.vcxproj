@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3B3CBDE-A454-4BAD-9855-53CA6A86A37A}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(ConfigurationName)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(ConfigurationName)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(ConfigurationName)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(ConfigurationName)</OutDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_OPENGL_LIB;METRICS-GUI_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\qtmain;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtOpenGL;.\;.\metricmanager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtXmld4.lib;QtOpenGLd4.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;QT_LARGEFILE_SUPPORT;QT_DLL;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions);METRICSGUI_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../GsTL_item_model;../sgems-metrics;$(AR2TECH_GSTL_DIR);$(AR2TECH_SGEMS_DIR);.\GeneratedFiles;$(QTDIRx64)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRx64)\include\qtmain;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include\QtSql;$(QTDIRx64)\include\QtOpenGL;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;$(BOOSTDIR);c:\code-dev\eigen\;.\;.\metricmanager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\debug\plugins\Geostat\metrics-gui.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIRx64)\lib;$(VTKDIR)\build\bin\Debug;$(AR2TECH_SGEMS_DIR)\lib\x64\debug;$(QTDIRx64)/plugins/designer;../GsTL_item_model;../sgems-metrics;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>vtkCommon.lib;vtksys.lib;vtkViews.lib;vtkWidgets.lib;vtkRendering.lib;vtkVolumeRendering.lib;vtkInfovis.lib;vtkGraphics.lib;vtkImaging.lib;vtkIO.lib;vtkFiltering.lib;vtkHybrid.lib;vtkCharts.lib;GsTLAppli_actions.lib;GsTLAppli_appli.lib;GsTLAppli_extragui.lib;GsTLAppli_filters.lib;GsTLAppli_geostat.lib;GsTLAppli_grid.lib;GsTLAppli_gui.lib;GsTLAppli_math.lib;GsTLAppli_utils.lib;GsTLwidgets.lib;GsTL_item_model.lib;sgems-metrics.lib;QtXmld4.lib;QtOpenGLd4.lib;QtGuid4.lib;QtCored4.lib;QtSqld4.lib;Opengl32.lib;QVTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>metrics-gui.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_OPENGL_LIB;METRICS-GUI_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\qtmain;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtOpenGL;.\;.\metricmanager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;QtCore4.lib;QtGui4.lib;QtXml4.lib;QtOpenGL4.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions);METRICSGUI_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../GsTL_item_model;../sgems-metrics;$(AR2TECH_GSTL_DIR);$(AR2TECH_SGEMS_DIR);.\GeneratedFiles;$(QTDIRx64)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIRx64)\include\qtmain;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include\QtSql;$(QTDIRx64)\include\QtOpenGL;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;$(BOOSTDIR);c:\code-dev\eigen\;.\;.\metricmanager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\release\plugins\Geostat\mds-gui.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIRx64)\lib;$(VTKDIR)\build\bin\Release;$(AR2TECH_SGEMS_DIR)\lib\x64\release;$(QTDIRx64)\plugins/designer;$(AR2TECH_SGEMS_DIR)\lib\x64/release/plugins/Geostat;../GsTL_item_model;../sgems-metrics;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;gdi32.lib;user32.lib;vtkCommon.lib;vtksys.lib;QVTK.lib;vtkViews.lib;vtkWidgets.lib;vtkRendering.lib;vtkVolumeRendering.lib;vtkInfovis.lib;vtkGraphics.lib;vtkImaging.lib;vtkIO.lib;vtkFiltering.lib;vtkHybrid.lib;vtkCharts.lib;GsTLAppli_actions.lib;GsTLAppli_appli.lib;GsTLAppli_extragui.lib;GsTLAppli_filters.lib;GsTLAppli_geostat.lib;GsTLAppli_grid.lib;GsTLAppli_math.lib;GsTLAppli_utils.lib;GsTLwidgets.lib;GsTLAppli_gui.lib;GsTL_item_model.lib;sgems-metrics.lib;QtXml4.lib;QtOpenGL4.lib;QtGui4.lib;QtCore4.lib;QtSql4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="chart_mds.cpp" />
+    <ClCompile Include="eda_mds_space.cpp" />
+    <ClCompile Include="GeneratedFiles\Debug\moc_chart_mds.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_chart_response.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_colorlisteditor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_eda_mds_space.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_eda_response.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mdsparameterexplorertabwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mdsresponseitemdelegate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mdsspacecreatordialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MetricDistanceChooser.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MultipleMetricDataSelector.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_parameterplotsubwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_sharedparametersubwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_mds-gui.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_chart_mds.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_chart_response.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_colorlisteditor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_eda_mds_space.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_eda_response.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mdsparameterexplorertabwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mdsresponseitemdelegate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mdsspacecreatordialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MetricDistanceChooser.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MultipleMetricDataSelector.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_parameterplotsubwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_sharedparametersubwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="mdsspacecreatordialog.cpp" />
+    <ClCompile Include="mds_gui_library_init.cpp" />
+    <ClCompile Include="MetricDistanceChooser.cpp" />
+    <ClCompile Include="metricmanager\chart_response.cpp" />
+    <ClCompile Include="metricmanager\colorlisteditor.cpp" />
+    <ClCompile Include="metricmanager\eda_response.cpp" />
+    <ClCompile Include="metricmanager\mdsresponseitemdelegate.cpp" />
+    <ClCompile Include="metric_utilities.cpp" />
+    <ClCompile Include="MultipleMetricDataSelector.cpp" />
+    <ClCompile Include="parameterExplorer\mdsparameterexplorertabwidget.cpp" />
+    <ClCompile Include="parameterExplorer\mdsparametertablemodel.cpp" />
+    <ClCompile Include="parameterExplorer\parameterplotsubwindow.cpp" />
+    <ClCompile Include="parameterExplorer\sharedparametersubwindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="chart_mds.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="eda_mds_space.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <ClInclude Include="GeneratedFiles\ui_mdsmetricplotsubwindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_mdsparameterexplorertabwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_parameterplotsubwindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_sharedparametersubwindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_mdsmetricmanagerframe.h" />
+    <ClInclude Include="GeneratedFiles\ui_mdsspaceanalystframe.h" />
+    <ClInclude Include="GeneratedFiles\ui_mdsspacecreatordialog.h" />
+    <ClInclude Include="GeneratedFiles\ui_mdsuncertainitysubwindow.h" />
+    <CustomBuild Include="MetricDistanceChooser.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="mdsspacecreatordialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <ClInclude Include="metric_utilities.h" />
+    <CustomBuild Include="MultipleMetricDataSelector.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="parameterExplorer\mdsparameterexplorertabwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <ClInclude Include="parameterExplorer\mdsparametertablemodel.h" />
+    <CustomBuild Include="parameterExplorer\sharedparametersubwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="parameterExplorer\parameterplotsubwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="metricmanager\eda_response.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="metricmanager\colorlisteditor.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="metricmanager\mdsresponseitemdelegate.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+    <CustomBuild Include="metricmanager\chart_response.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DMETRICS-GUI_LIB -D_WINDLL "-I." "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtOpenGL" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_OPENGL_LIB "-D\"$(INHERIT)\"" -DMETRICSGUI_EXPORTS -D_WINDLL "-I." "-I.\..\GsTL_item_model" "-I.\..\sgems-metrics" "-I$(AR2TECH_GSTL_DIR)\." "-I$(AR2TECH_SGEMS_DIR)\." "-I.\GeneratedFiles" "-I$(QTDIRx64)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIRx64)\include\qtmain" "-I$(QTDIRx64)\include\QtCore" "-I$(QTDIRx64)\include\QtGui" "-I$(QTDIRx64)\include\QtXml" "-I$(QTDIRx64)\include\QtSql" "-I$(QTDIRx64)\include\QtOpenGL" "-I$(VTKDIR)\Build" "-I$(VTKDIR)\." "-I$(VTKDIR)\Common" "-I$(VTKDIR)\Utilities" "-I$(VTKDIR)\Rendering" "-I$(VTKDIR)\VolumeRendering" "-I$(VTKDIR)\Charts" "-I$(VTKDIR)\Geovis" "-I$(VTKDIR)\Infovis" "-I$(VTKDIR)\Views" "-I$(VTKDIR)\Hybrid" "-I$(VTKDIR)\Widgets" "-I$(VTKDIR)\IO" "-I$(VTKDIR)\Imaging" "-I$(VTKDIR)\Graphics" "-I$(VTKDIR)\GenericFiltering" "-I$(VTKDIR)\Filtering" "-I$(VTKDIR)\GUISupport" "-I$(VTKDIR)\GUISupport\Qt" "-I$(VTKDIR)\build\Rendering" "-I$(PYTHONDIRx64)\Include" "-I$(BOOSTDIR)\." "-Ic:\code-dev\eigen" "-I." "-I.\metricmanager" "-I." "-I." "-I."</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mds-gui.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);.\icons\props2metrics.png;.\icons\MdsSpace.png;.\icons\metricExplorer.png;.\icons\metric2props.png;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FullPath);.\icons\props2metrics.png;.\icons\MdsSpace.png;.\icons\metricExplorer.png;.\icons\metric2props.png;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);.\icons\props2metrics.png;.\icons\MdsSpace.png;.\icons\metricExplorer.png;.\icons\metric2props.png;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FullPath);.\icons\props2metrics.png;.\icons\MdsSpace.png;.\icons\metricExplorer.png;.\icons\metric2props.png;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\MdsSpace.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\metric2props.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\metricExplorer.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\props2metrics.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <CustomBuild Include="mdsspaceanalystframe.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="mdsspacecreatordialog.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="mdsuncertainitysubwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="metricmanager\mdsmetricmanagerframe.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="metricmanager\mdsmetricplotsubwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="parameterExplorer\mdsparameterexplorertabwidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="parameterExplorer\parameterplotsubwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="parameterExplorer\sharedparametersubwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" RccDir=".\GeneratedFiles" lupdateOnBuild="1" lupdateOptions="" lreleaseOptions="" QtVersion_x0020_x64="4.7.3-x64" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

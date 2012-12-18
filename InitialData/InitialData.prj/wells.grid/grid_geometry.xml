@@ -1,0 +1,9 @@
+<!DOCTYPE gridGeometry>
+<Grid type="Point_set" name="wells">
+ <Geometry size="106"/>
+ <Properties>
+  <GsTLGridProperty filepath="properties/property__facies.sgems" type="Continuous" name="facies"/>
+ </Properties>
+ <Regions/>
+ <PropertyGroups/>
+</Grid>

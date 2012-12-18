@@ -1,0 +1,16 @@
+perm_hist0.out std 30.5109881526
+perm_hist0.out mean 43.6052070997
+perm_hist1.out std 661.423142933
+perm_hist1.out mean 1243.67188149
+perm_hist2.out std 606.504237403
+perm_hist2.out mean 1617.28907966
+perm_hist3.out std 363.154546426
+perm_hist3.out mean 2058.40411342
+poro_hist0.out std 0.0311788514066
+poro_hist0.out mean 0.0216580308696
+poro_hist1.out std 0.0486726796749
+poro_hist1.out mean 0.197223759628
+poro_hist2.out std 0.0655552401054
+poro_hist2.out mean 0.203407586747
+poro_hist3.out std 0.0513531517295
+poro_hist3.out mean 0.227760771244

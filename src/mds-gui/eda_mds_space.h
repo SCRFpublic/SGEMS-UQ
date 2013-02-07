@@ -2,8 +2,8 @@
 #define EDA_MDS_SPACE_H
 
 #include <QObject>
-#include <GsTLAppli/gui/charts/eda_charts.h>
-#include <GsTLAppli/gui/charts/chart_mdi_area.h>
+#include <GsTLAppli/charts/chart_creator.h>
+#include <GsTLAppli/charts/chart_mdi_area.h>
 #include <common.h>
 #include <QFrame>
 #include <GsTLAppli/appli/project.h>
@@ -39,7 +39,7 @@
 #include <QTreeView>
 
 
-class METRICSGUI_DECL EDA_mds_space : public EDA_chart
+class METRICSGUI_DECL EDA_mds_space : public Chart_creator
 {
     Q_OBJECT
 
@@ -77,7 +77,7 @@ protected:
 
 
 
-class METRICSGUI_DECL EDA_mds_space_factory : public EDA_chart_factory 
+class METRICSGUI_DECL EDA_mds_space_factory : public Chart_creator_factory 
 {
 
 public:
@@ -93,7 +93,7 @@ public:
   virtual QString tab_name() const{return "Responses";}
   std::string name() const {return "MDS Space";}
 
-  virtual EDA_chart* get_interface(Chart_mdi_area* mdi_area){return new EDA_mds_space(mdi_area);}
+  virtual Chart_creator* get_interface(Chart_mdi_area* mdi_area){return new EDA_mds_space(mdi_area);}
 
 };
 

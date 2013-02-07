@@ -137,7 +137,7 @@ void MDSUncertainitySubWindow::setUpVtkRenderingWidget()
     vtkData_->GetPointData()->AddArray(table_->GetColumn(0));
 
     VTK_CREATE(vtkPointSetToLabelHierarchy, hier);
-    hier->SetInput(vtkData_);
+    hier->SetInputData(vtkData_);
     hier->SetLabelArrayName("Property");
     hier->GetTextProperty()->SetColor(0.02, 0.02, 0.02);
 
@@ -172,7 +172,7 @@ void MDSUncertainitySubWindow::setUpVtkRenderingWidget()
     // Mapper
     VTK_CREATE(vtkPolyDataMapper, mapper);
     mapper->ImmediateModeRenderingOn();
-    mapper->SetInput(vtkData_);
+    mapper->SetInputData(vtkData_);
 
     // Actor in scene
     VTK_CREATE(vtkActor, actor);
@@ -293,7 +293,7 @@ void MDSUncertainitySubWindow::generateClusters()
     vtkSmartPointer<vtkKMeansStatistics> kMeansStatistics =
             vtkSmartPointer<vtkKMeansStatistics>::New();
 
-    kMeansStatistics->SetInput( vtkStatisticsAlgorithm::INPUT_DATA, inputData);
+    kMeansStatistics->SetInputData( vtkStatisticsAlgorithm::INPUT_DATA, inputData);
     kMeansStatistics->SetColumnStatus( inputData->GetColumnName( 0 ) , 1 );
     kMeansStatistics->SetColumnStatus( inputData->GetColumnName( 1 ) , 1 );
     kMeansStatistics->SetColumnStatus( inputData->GetColumnName( 2 ) , 1 );

@@ -190,7 +190,7 @@ void param_base_class::traversePath(parameterNode *node, QString *currentPath)
 
 bool param_base_class::update()
 {
-
+  return true;
 }
 
 

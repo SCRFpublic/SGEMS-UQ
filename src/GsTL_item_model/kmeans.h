@@ -9,7 +9,7 @@ alexchia@stanford.edu
 #include <common.h>
 #include <string.h>
 #include <stdlib.h>
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 #include <vector>
 #include <string>
 #include "MetricData.h"

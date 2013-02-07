@@ -71,7 +71,7 @@ void param_plot_window::plot(QStringList &properties,
     // Add multiple line plots, setting the colors etc
     vtkPlot *line = 0;
     line = chart_->AddPlot(vtkChart::BAR);
-    line->SetInput(table_, 0, 2);
+    line->SetInputData(table_, 0, 2);
     line->SetColor(67,	110	,238, 255);
 
     vtkAxis *x_axis = chart_->GetAxis(vtkAxis::BOTTOM);
@@ -81,8 +81,7 @@ void param_plot_window::plot(QStringList &properties,
     x_axis->SetTitle("Realizations");
     x_axis->GetTitleProperties()->SetFontSize(16);
 
-    x_axis->SetTickPositions(arrId_);
-    x_axis->SetTickLabels(labels_);
+    x_axis->SetCustomTickPositions(arrId_, labels_);
     x_axis->GetLabelProperties()->SetOrientation(90);
     x_axis->GetLabelProperties()->SetFontSize(16);
 

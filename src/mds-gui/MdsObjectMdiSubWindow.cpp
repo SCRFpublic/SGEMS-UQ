@@ -244,7 +244,7 @@ void MdsObjectMdiSubWindow::setUpVtkRenderingWidget(){
     vtkData_->GetPointData()->AddArray(table_->GetColumn(0));
 
     VTK_CREATE(vtkPointSetToLabelHierarchy, hier);
-    hier->SetInput(vtkData_);
+    hier->SetInputData(vtkData_);
     hier->SetLabelArrayName("Property");
     hier->GetTextProperty()->SetColor(0.02, 0.02, 0.02);
 
@@ -276,7 +276,7 @@ void MdsObjectMdiSubWindow::setUpVtkRenderingWidget(){
     // Mapper
     VTK_CREATE(vtkPolyDataMapper, mapper);
     mapper->ImmediateModeRenderingOn();
-    mapper->SetInput(vtkData_);
+    mapper->SetInputData(vtkData_);
 
     // Actor in scene
     VTK_CREATE(vtkActor, actor);

@@ -66,13 +66,13 @@ void vtkChartMdiSubWindow::buildModel(int i){
 		table_->SetValue(i, 2, sin(i * inc) + 0.0);
 	}
 
-	table_->Update();
+	table_->Modified();
 	if(i==0) {
 		vtkPlot *line = chart_->AddPlot(vtkChart::BAR);
-		line->SetInput(table_, 0, 1);
+		line->SetInputData(table_, 0, 1);
 		line->SetColor(255, 0, 0, 255);
 		line = chart_->AddPlot(vtkChart::BAR);
-		line->SetInput(table_, 0, 2);
+		line->SetInputData(table_, 0, 2);
 		line->SetColor(0, 255, 0, 255);
 		line->SetWidth(2.0);
 		chart_->SetShowLegend(true);
@@ -80,7 +80,7 @@ void vtkChartMdiSubWindow::buildModel(int i){
 	else
 	{
 		vtkPlot *pt = chart_->AddPlot(vtkChart::POINTS);
-		pt->SetInput(table_, 1, 2);
+		pt->SetInputData(table_, 1, 2);
 		pt->SetColor(255, 0, 0, 255);
 	}
 

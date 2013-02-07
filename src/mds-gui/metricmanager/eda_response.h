@@ -2,9 +2,9 @@
 #define EDA_RESPONSE_H
 
 #include <QObject>
-#include <GsTLAppli/gui/charts/eda_charts.h>
-#include <GsTLAppli/gui/charts/chart_mdi_area.h>
-#include <GsTLAppli/gui/common.h>
+#include <GsTLAppli/charts/chart_creator.h>
+#include <GsTLAppli/charts/chart_mdi_area.h>
+
 
 #include <QDialog>
 #include <QMainWindow>
@@ -32,7 +32,7 @@
 //#include <actions/externalresponseioaction.h>
 
 
-class METRICSGUI_DECL EDA_response : public EDA_chart
+class METRICSGUI_DECL EDA_response : public Chart_creator
 {
     Q_OBJECT
 public:
@@ -69,7 +69,7 @@ private:
 
 
 
-class METRICSGUI_DECL EDA_response_factory : public EDA_chart_factory 
+class METRICSGUI_DECL EDA_response_factory : public Chart_creator_factory 
 {
 
 public:
@@ -85,7 +85,7 @@ public:
   virtual QString tab_name() const{return "Responses";}
   std::string name() const {return "Responses";}
 
-  virtual EDA_chart* get_interface(Chart_mdi_area* mdi_area){return new EDA_response(mdi_area);}
+  virtual Chart_creator* get_interface(Chart_mdi_area* mdi_area){return new EDA_response(mdi_area);}
 
 };
 

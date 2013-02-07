@@ -10,7 +10,7 @@
 #include <GsTL/utils/smartptr.h>
 #include <GsTLAppli/utils/manager.h>
 #include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/gui/charts/chart_mdi_area.h>
+#include <GsTLAppli/charts/chart_mdi_area.h>
 #include <QDebug>
 #include <QMessageBox>
 #include <QSqlDatabase>

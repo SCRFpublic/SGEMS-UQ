@@ -120,7 +120,7 @@ sharedParameterSubwindow::sharedParameterSubwindow(QWidget *parent,
 
     vtkPlot *line = 0;
     line = chart_->AddPlot(vtkChart::BAR);
-    line->SetInput(table_, 0, 2);
+    line->SetInputData(table_, 0, 2);
 
     line->SetColor(67,	110	,238, 255);
 
@@ -135,8 +135,7 @@ sharedParameterSubwindow::sharedParameterSubwindow(QWidget *parent,
     x_axis->SetMaximum(data_.size()+1);
     x_axis->SetTitle(params.back().toStdString());
 
-    x_axis->SetTickPositions(arrId_);
-    x_axis->SetTickLabels(labels_);
+    x_axis->SetCustomTickPositions(arrId_,labels_);
  //   x_axis->GetLabelProperties()->SetVerticalJustification(VTK_TEXT_CENTERED);
  //   x_axis->GetLabelProperties()->SetJustification(VTK_TEXT_CENTERED);
     x_axis->GetLabelProperties()->SetOrientation(90);

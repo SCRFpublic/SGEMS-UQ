@@ -38,4 +38,6 @@ bool param_display_widget::update()
 
         this->ui->parametersTreeScrollArea->setWidget(displayParameterModel);
     }
+
+    return true;
 }

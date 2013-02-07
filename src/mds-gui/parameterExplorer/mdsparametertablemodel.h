@@ -8,6 +8,7 @@
 
 class METRICSGUI_DECL parameterNode: public QTreeWidgetItem
 {
+
 public:
     parameterNode(QString nodeName, QString nodeValue,
                   QTreeWidgetItem *parentItem = 0):

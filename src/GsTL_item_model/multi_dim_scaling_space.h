@@ -16,7 +16,7 @@
 #include "MetricData.h"
 #include "MetricDataManager.h"
 #include "common.h"
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 
 #include <GsTLAppli/utils/named_interface.h>
 #include <GsTLAppli/math/gstlpoint.h>

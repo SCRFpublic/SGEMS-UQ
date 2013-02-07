@@ -199,7 +199,7 @@ bool param_search_widget::update()
 
     //    for (unsigned int i = numFound + 1; i < searchResults.size(); ++i)
     //        ui->tableViewResults->hideRow(i);
-
+    return true;
 }
 
 void param_search_widget::plot()

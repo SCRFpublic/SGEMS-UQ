@@ -3,7 +3,7 @@
 #include <metric_utilities.h>
 
 EDA_response::EDA_response(Chart_mdi_area* mdi_area, QWidget *parent) :
-    EDA_chart(mdi_area,parent)
+    Chart_creator(mdi_area,parent)
 {
     
     QVBoxLayout* main_layout = new QVBoxLayout(this);

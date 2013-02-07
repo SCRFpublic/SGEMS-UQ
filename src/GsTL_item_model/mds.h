@@ -7,7 +7,7 @@ alexchia@stanford.edu
 */
 
 #include "common.h"
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 #include <iostream>
 
 using namespace Eigen;

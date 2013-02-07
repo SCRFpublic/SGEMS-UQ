@@ -1,7 +1,7 @@
 #ifndef CHART_RESPONSE_H
 #define CHART_RESPONSE_H
 
-#include <GsTLAppli/gui/charts/chart_base.h>
+#include <GsTLAppli/charts/chart_base.h>
 
 #include <QObject>
 

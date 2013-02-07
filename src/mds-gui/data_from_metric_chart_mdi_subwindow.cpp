@@ -166,7 +166,7 @@ bool ChartDataFromMetricMdiSubWindow::initialize(int plotType, QHash<QString, QS
 
 		}
 	 }
-	table_->Update();
+	table_->Modified();
 
 	// add bars
 	it = metricNamePropsPairs.constBegin();
@@ -175,7 +175,7 @@ bool ChartDataFromMetricMdiSubWindow::initialize(int plotType, QHash<QString, QS
 	 for( ; it != metricNamePropsPairs.constEnd(); ++it, ++ct) {
 		 QString metricName = it.key();
 			vtkPlot *plot = chart_->AddPlot(plotType);
-			plot->SetInput(table_, 0,ct +2);
+			plot->SetInputData(table_, 0,ct +2);
 			plot->SetLabel(vtkStdString(metricName.toStdString().c_str()));
 			plot->SetColor( red[ct],green[ct],blue[ct], alpha[ct] );
 	 }
@@ -193,7 +193,7 @@ bool ChartDataFromMetricMdiSubWindow::initialize(int plotType, QHash<QString, QS
 				 for( ; it_second != metricNamePropsPairs.constEnd(); ++it_second, ++ct_second) {
 					QString metricNameSecond = it_second.key();
 					vtkPlot *plot = chart_->AddPlot(plotType);
-					plot->SetInput(table_, ct+2,ct_second +2);
+					plot->SetInputData(table_, ct+2,ct_second +2);
 					std::string labelPlot =  metricName.toStdString() + " and "
 											 + metricNameSecond.toStdString();
 					plot->SetLabel(vtkStdString(labelPlot.c_str()));

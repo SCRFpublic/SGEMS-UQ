@@ -103,7 +103,7 @@ bool MDSMetricPlotMdiSubWindow::initialize(int plotType,
         table_->SetValue( i,2,mdata->data(0) );
     }
 
-    table_->Update();
+    table_->Modified();
 
     // add bars
 
@@ -111,7 +111,7 @@ bool MDSMetricPlotMdiSubWindow::initialize(int plotType,
     if( plotType == vtkChart::BAR )
     {
         vtkPlot *plot = chart_->AddPlot(plotType);
-        plot->SetInput(table_, 0, 2);
+        plot->SetInputData(table_, 0, 2);
         plot->SetLabel(vtkStdString(metricName.toStdString().c_str()));
         plot->SetColor( red[ct],green[ct],blue[ct], alpha[ct] );
 
@@ -247,16 +247,16 @@ bool MDSMetricPlotMdiSubWindow::initializeTimeSeries(int plotType,
         prevNumberOfRows = currentNumberOfRows;
     }
 
-    table_->Update();
+    table_->Modified();
 
     // Plot data
     vtkPlot *plot = chart_->AddPlot(vtkChart::LINE);
-    plot->SetInput(table_,2,3);
+    plot->SetInputData(table_,2,3);
     plot->SetColor(red[0],green[0],blue[0],alpha[0]);
 
 
     vtkPlot *plot2 = chart_->AddPlot(vtkChart::LINE);
-    plot2->SetInput(table2_,0,1);
+    plot2->SetInputData(table2_,0,1);
     plot2->SetColor(red[1],green[1],blue[1],alpha[1]);
 
     chart_->GetAxis(vtkAxis::BOTTOM)->SetTitle(vtkStdString("Time"));
@@ -269,7 +269,7 @@ bool MDSMetricPlotMdiSubWindow::initializeTimeSeries(int plotType,
     //    if( plotType == vtkChart::BAR )
     //    {
     //        vtkPlot *plot = chart_->AddPlot(plotType);
-    //        plot->SetInput(table_, 0, 2);
+    //        plot->SetInputData(table_, 0, 2);
     //        plot->SetLabel(vtkStdString(metricName.toStdString().c_str()));
     //        plot->SetColor( red[ct],green[ct],blue[ct], alpha[ct] );
 

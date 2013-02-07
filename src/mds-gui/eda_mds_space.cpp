@@ -4,7 +4,7 @@
 #include <multi_dim_scaling_space.h>
 
 EDA_mds_space::EDA_mds_space(Chart_mdi_area* mdi_area, QWidget *parent) :
-    EDA_chart(mdi_area, parent)
+    Chart_creator(mdi_area, parent)
 {
 
     QVBoxLayout* main_layout = new QVBoxLayout(this);

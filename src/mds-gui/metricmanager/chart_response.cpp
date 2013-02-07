@@ -119,7 +119,7 @@ bool Chart_response::initialize(int plotType,
         table_->SetValue( i,2,mdata->data(0) );
     }
 
-    table_->Update();
+    table_->Modified();
 
     // add bars
 
@@ -127,7 +127,7 @@ bool Chart_response::initialize(int plotType,
     if( plotType == vtkChart::BAR )
     {
         vtkPlot *plot = chart_->AddPlot(plotType);
-        plot->SetInput(table_, 0, 2);
+        plot->SetInputData(table_, 0, 2);
         plot->SetLabel(vtkStdString(metricName.toStdString().c_str()));
         plot->SetColor( red[ct],green[ct],blue[ct], alpha[ct] );
 
@@ -142,9 +142,7 @@ bool Chart_response::initialize(int plotType,
         x_axis->SetMaximum(numMetrics);
         x_axis->SetTitle("Realizations");
 
-
-        x_axis->SetTickPositions(arrId_);
-        x_axis->SetTickLabels(labels_);
+        x_axis->SetCustomTickPositions(arrId_,labels_);
         x_axis->GetLabelProperties()->SetVerticalJustification(VTK_TEXT_CENTERED);
         x_axis->GetLabelProperties()->SetJustification(VTK_TEXT_CENTERED);
         x_axis->GetLabelProperties()->SetOrientation(90);
@@ -248,7 +246,7 @@ bool Chart_response::initializeVector(int plotType,
         Response_plot_data responseVTKData;
         responseVTKData.table_ = responseTable_;
         responseVTKData.plot_ = this->chart_->AddPlot(vtkChart::POINTS);
-        responseVTKData.plot_->SetInput(responseVTKData.table_,0,1);
+        responseVTKData.plot_->SetInputData(responseVTKData.table_,0,1);
 
         int colorIndex = (i+15) % masterColorList.size();
         QColor defaultColor = QColor(masterColorList.at(colorIndex));
@@ -378,7 +376,7 @@ bool Chart_response::initializeTimeSeries(int plotType,
         Response_plot_data responseVTKData;
         responseVTKData.table_ = responseTable_;
         responseVTKData.plot_ = this->chart_->AddPlot(vtkChart::LINE);
-        responseVTKData.plot_->SetInput(responseVTKData.table_,0,1);
+        responseVTKData.plot_->SetInputData(responseVTKData.table_,0,1);
 
         int colorIndex = (i+15) % masterColorList.size();
         QColor defaultColor = QColor(masterColorList.at(colorIndex));
@@ -504,7 +502,7 @@ bool Chart_response::initializeDistribution(int plotType,
         Response_plot_data responseVTKData;
         responseVTKData.table_ = responseTable_;
         responseVTKData.plot_ = this->chart_->AddPlot(vtkChart::LINE);
-        responseVTKData.plot_->SetInput(responseVTKData.table_,0,1);
+        responseVTKData.plot_->SetInputData(responseVTKData.table_,0,1);
 
         int colorIndex = (i+15) % masterColorList.size();
         QColor defaultColor = QColor(masterColorList.at(colorIndex));

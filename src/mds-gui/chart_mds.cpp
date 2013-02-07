@@ -135,7 +135,7 @@ void Chart_mds::setUpVtkRenderingWidget()
     vtkData_->GetPointData()->AddArray(table_->GetColumn(0));
 
     VTK_CREATE(vtkPointSetToLabelHierarchy, hier);
-    hier->SetInput(vtkData_);
+    hier->SetInputData(vtkData_);
     hier->SetLabelArrayName("Property");
     hier->GetTextProperty()->SetColor(0.02, 0.02, 0.02);
     hier->GetTextProperty()->SetFontSize(18);
@@ -171,7 +171,7 @@ void Chart_mds::setUpVtkRenderingWidget()
     // Mapper
     VTK_CREATE(vtkPolyDataMapper, mapper);
     mapper->ImmediateModeRenderingOn();
-    mapper->SetInput(vtkData_);
+    mapper->SetInputData(vtkData_);
 
     // Actor in scene
     VTK_CREATE(vtkActor, actor);
@@ -292,7 +292,7 @@ void Chart_mds::generateClusters()
     vtkSmartPointer<vtkKMeansStatistics> kMeansStatistics =
             vtkSmartPointer<vtkKMeansStatistics>::New();
 
-    kMeansStatistics->SetInput( vtkStatisticsAlgorithm::INPUT_DATA, inputData);
+    kMeansStatistics->SetInputData( vtkStatisticsAlgorithm::INPUT_DATA, inputData);
     kMeansStatistics->SetColumnStatus( inputData->GetColumnName( 0 ) , 1 );
     kMeansStatistics->SetColumnStatus( inputData->GetColumnName( 1 ) , 1 );
     kMeansStatistics->SetColumnStatus( inputData->GetColumnName( 2 ) , 1 );

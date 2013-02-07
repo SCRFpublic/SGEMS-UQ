@@ -21,6 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{587A5B0E-DEF0-46B8-91EB-B1045F46FFCA}</ProjectGuid>
     <RootNamespace>Geobody</RootNamespace>
+    <ProjectName>metrics-algos</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -93,7 +94,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);c:\code-dev\eigen\;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;$(QTDIRx64)\include\QtSql;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;$(QTDIRx64)\include\QtSql;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>METRICSACTIONS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -103,12 +104,12 @@
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;QtXmld4.lib;QtCored4.lib;QtSqld4.lib;GsTL_item_model.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\debug\plugins\Geostat\sgems-metrics.dll</OutputFile>
-      <AdditionalLibraryDirectories>$(AR2TECH_SGEMS_DIR)\lib\x64\debug;$(QTDIRx64)\lib;..\GsTL_item_model;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;QtXmld4.lib;QtCored4.lib;metrics-data.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\debug\plugins\Geostat\metrics-algo.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(AR2TECH_SGEMS_DIR)\lib\x64\debug;$(QTDIRx64)\lib;..\GsTL_item_model\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <TargetMachine>MachineX64</TargetMachine>
-      <ImportLibrary>sgems-metrics.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)\metrics-algo.lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,7 +139,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./;../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);c:\code-dev\eigen\;$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;$(QTDIRx64)\include\QtSql;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;../GsTL_item_model;$(AR2TECH_SGEMS_DIR);$(AR2TECH_GSTL_DIR);$(BOOSTDIR);$(QTDIRx64)\include\QtCore;$(QTDIRx64)\include\QtGui;$(QTDIRx64)\include\QtXml;$(QTDIRx64)\include;$(QTDIRx64)\include\QtSql;$(VTKDIR)\Build;$(VTKDIR);$(VTKDIR)\Common;$(VTKDIR)\Utilities;$(VTKDIR)\Rendering;$(VTKDIR)\VolumeRendering;$(VTKDIR)\Charts;$(VTKDIR)\Geovis;$(VTKDIR)\Infovis;$(VTKDIR)\Views;$(VTKDIR)\Hybrid;$(VTKDIR)\Widgets;$(VTKDIR)\IO;$(VTKDIR)\Imaging;$(VTKDIR)\Graphics;$(VTKDIR)\GenericFiltering;$(VTKDIR)\Filtering;$(VTKDIR)\GUISupport;$(VTKDIR)\GUISupport\Qt;$(VTKDIR)\build\Rendering;$(PYTHONDIRx64)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <WarningLevel>Level3</WarningLevel>
@@ -146,13 +147,14 @@
       <PreprocessorDefinitions>METRICSACTIONS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;QtXml4.lib;QtCore4.lib;QtSql4.lib;GsTL_item_model.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\release\plugins\Geostat\ML_algos.dll</OutputFile>
-      <AdditionalLibraryDirectories>$(AR2TECH_SGEMS_DIR)\lib\x64\release;$(QTDIRx64)\lib;..\GsTL_item_model;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GsTLAppli_grid.lib;GsTLAppli_utils.lib;GsTLAppli_geostat.lib;GsTLAppli_math.lib;GsTLAppli_appli.lib;GsTLAppli_actions.lib;QtXml4.lib;QtCore4.lib;QtSql4.lib;metrics-data.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(AR2TECH_SGEMS_DIR)\lib\x64\release\plugins\Geostat\metrics-algo.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(AR2TECH_SGEMS_DIR)\lib\x64\release;$(QTDIRx64)\lib;..\GsTL_item_model\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX64</TargetMachine>
+      <ImportLibrary>$(OutDir)\metrics-algo.lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

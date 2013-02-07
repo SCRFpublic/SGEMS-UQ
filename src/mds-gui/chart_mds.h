@@ -2,8 +2,8 @@
 #define CHART_MDS_H
 
 #include <QObject>
-#include <GsTLAppli/gui/charts/chart_base.h>
-#include <GsTLAppli/gui/charts/chart_mdi_area.h>
+#include <GsTLAppli/charts/chart_base.h>
+#include <GsTLAppli/charts/chart_mdi_area.h>
 #include <common.h>
 #include <QWidget>
 

@@ -1,7 +1,17 @@
 SGEMS-UQ
 =======
 
-1. SGEMS-UQ Compilation Instruction
+1)  Compiled binaries
+A Windows 64bits version of the plug-in can be downloaded with the latest SGeMS version from 
+here: http://dl.dropbox.com/u/95827466/SGeMS-UQ-x64-beta-ar2tech-installer.exe
+
+To access SGeMS-UQ from the SGeMS
+ - Install SGeMS and SGeMS-UQ with the installer
+ - Start SGeMS
+ - Press CTRL-E or from the top menu "Data Analysis"->"Data Explorer (beta)"
+ - Click on the "Responses" tab on the bottom right of the newly created window.
+
+2) SGEMS-UQ Compilation Instruction
 
 SGEMS-UQ requires the installation of SGEMS3.0. SGEMS-UQ has no further dependencies and can be compiled using 
 qmake (or Visual Studio with Qt Add-in http://doc.qt.digia.com/vs-add-in/index.html). The order in which compilation 
@@ -18,14 +28,14 @@ Windows specific instructions:
  - Build the solutions (The projects use the same env. variables for paths as SGeMS)
  - Be sure that the path to the $(AR2TECH_SGEMS_DIR)/plugins/Geostat is added in the PATH environment variable.
 
-2. Data Generation
+3) Data Generation
 
 The (Scripts->GenerateModels->Main.py) script can be used to generate appropriate facies, permeability and porosity values. 
 The appropriate initial data and histograms can be found under InitialData. The results of the simulations are given in ProxyResults->raw. 
 Scripts->ProcessResults->parseRawProxy.py is used to parse appropriate responses of interest into the SGEMS-UQ XML format. 
 Likewise, the (Scripts->ProcessResults->copyFacieProjects.py and combineParameters.py) scripts are used to generate the appropriate SGEMS project.
 
-3. Using SGEMS-UQ
+4) Using SGEMS-UQ
 
 In our particular example, the WCA.prj project can be loaded by simply dragging into the main SGEMS window. 
 The SGEMS-UQ window can be initialized using Data Analysis -> Data Explorer (or simply Control-E).

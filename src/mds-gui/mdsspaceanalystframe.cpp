@@ -236,10 +236,10 @@ void MDSSpaceAnalystFrame::setMDSTreeView()
 {
     this->proxy_model = new Filter_root_proxy_model(this);
     this->ui->mdsListTreeView->setModel(proxy_model);
-    //this->mdsBaseIndex = proxy_model->mds_root_index();
+
     this->mdsBaseIndex = proxy_model->manager_index(
                 QString::fromStdString(mds_manager));
-    this->ui->mdsListTreeView->setRootIndex(this->mdsBaseIndex);
+    this->ui->mdsListTreeView->setRootIndex(mdsBaseIndex);
     this->ui->mdsListTreeView->setItemsExpandable(false);
 
     // Allow for objects to be dragged from list view into MDI area

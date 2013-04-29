@@ -1,5 +1,6 @@
 #include <mdsspacecreatordialog.h>
 #include <ui_mdsspacecreatordialog.h>
+#include <QMessageBox>
 
 MDSSpaceCreatorDialog::MDSSpaceCreatorDialog(GsTL_project* proj,
                                              QWidget* parent):
@@ -148,7 +149,31 @@ void MDSSpaceCreatorDialog::generateSetParameters()
 
 void MDSSpaceCreatorDialog::generateXML()
 {
-    this->generateSetParameters();
+    // Get list of existing MDS Space names
+    Filter_root_proxy_model * proxy_model = new Filter_root_proxy_model(this);
+    QModelIndex mdsBaseIndex = proxy_model->manager_index(
+                QString::fromStdString(mds_manager));
+
+    int numSpaces = proxy_model->rowCount(mdsBaseIndex);
+
+    for (int i = 0; i < numSpaces; i++)
+    {
+        QModelIndex index = proxy_model->index(i,0, mdsBaseIndex);
+        QString spaceName = proxy_model->data(index).toString();
+
+        if (spaceName==ui->gridNameLineEdit->text())
+        {
+            QMessageBox msgBox;
+             msgBox.setWindowTitle("Error!");
+             msgBox.setText("Name Already Exists");
+             msgBox.setDetailedText("A MDS Space with the same name already"
+                                    " exists. Please choose another");
+             msgBox.exec();
+
+            return;
+        }
+    }
+    generateSetParameters();
 }
 
 void MDSSpaceCreatorDialog::updatedMetricSelection(QStringList latestMetric)

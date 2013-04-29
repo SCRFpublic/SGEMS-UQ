@@ -15,14 +15,11 @@ param_search_widget::param_search_widget(QWidget *parent,Chart_mdi_area *mdi,
     ui->setupUi(this);
 
     // Add all properties to comboBoxProperty
-
     for (unsigned int i = 0; i < propertyList_.size(); ++i)
     {
         ui->comboBoxProperty->addItem(propertyList_.at(i));
     }
 
-
-    //ui->comboBoxProperty->addItems(propertyList_);
 
     // Connection between selecting a property and displaying its parameters
     connect(ui->comboBoxProperty,SIGNAL(currentIndexChanged(QString)),
@@ -41,7 +38,6 @@ param_search_widget::~param_search_widget()
 {
     delete ui;
 }
-
 void param_search_widget::updateParameterList(QString selectProp)
 {
     getParameterList(selectProp);
@@ -197,9 +193,6 @@ bool param_search_widget::update()
     ui->tableViewResults->setModel(model);
     ui->tableViewResults->horizontalHeader()->setStretchLastSection(true);
 
-    //    for (unsigned int i = numFound + 1; i < searchResults.size(); ++i)
-    //        ui->tableViewResults->hideRow(i);
-    return true;
 }
 
 void param_search_widget::plot()

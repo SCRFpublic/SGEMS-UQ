@@ -137,7 +137,7 @@ extern "C" METRIC_ALGO_LIB_DECL int plugin_init() {
 
     if (!dir)
     {
-       std::cerr << "could not create directory " <<
+       std::cerr << "Could not create directory " <<
                    externalResponseFilter_manager << "\n";
         return 1;
     }

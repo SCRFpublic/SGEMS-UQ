@@ -29,7 +29,7 @@ Chart_response::Chart_response(QWidget *parent) :
 //    tableView_->GetWidget()->setSizePolicy(tablePolicy);
 
     this->ui->vtkPlotArea->setWidget(qvtkWidget_);
-    this->ui->tabWidget->setHidden(true);
+    //this->ui->tabWidget->setHidden(true);
 
 
 
@@ -119,7 +119,7 @@ bool Chart_response::initialize(int plotType,
         table_->SetValue( i,2,mdata->data(0) );
     }
 
-    table_->Modified();
+   // table_->Update();
 
     // add bars
 
@@ -142,7 +142,9 @@ bool Chart_response::initialize(int plotType,
         x_axis->SetMaximum(numMetrics);
         x_axis->SetTitle("Realizations");
 
-        x_axis->SetCustomTickPositions(arrId_,labels_);
+
+        x_axis->SetTickPositions(arrId_);
+        x_axis->SetTickLabels(labels_);
         x_axis->GetLabelProperties()->SetVerticalJustification(VTK_TEXT_CENTERED);
         x_axis->GetLabelProperties()->SetJustification(VTK_TEXT_CENTERED);
         x_axis->GetLabelProperties()->SetOrientation(90);
@@ -211,7 +213,7 @@ bool Chart_response::initializeVector(int plotType,
         int numDataPoints = mDataV->size();
 
         // Set Combo list for viewing data
-        this->ui->comboBox->addItem(metricProps.at(i));
+        //this->ui->comboBox->addItem(metricProps.at(i));
 
         // Generate VTKTable for this property
         vtkSmartPointer<vtkTable> responseTable_ =
@@ -272,14 +274,14 @@ bool Chart_response::initializeVector(int plotType,
 
 
     // Display
-    this->ui->dataScrollArea->setWidget(tableView_->GetWidget());
+    //this->ui->dataScrollArea->setWidget(tableView_->GetWidget());
     this->ui->scrollArea->setWidget(this->responseQtTable);
 
     // Set combo box
-    connect(this->ui->comboBox,SIGNAL(currentIndexChanged(QString)),
-            this,SLOT(changeDataTableView(QString)));
+    //connect(this->ui->comboBox,SIGNAL(currentIndexChanged(QString)),
+            //this,SLOT(changeDataTableView(QString)));
 
-    this->ui->comboBox->setCurrentIndex(0);
+    //this->ui->comboBox->setCurrentIndex(0);
     this->changeDataTableView(metricProps.at(0));
 
     return true;
@@ -340,7 +342,7 @@ bool Chart_response::initializeTimeSeries(int plotType,
         int numDataPoints = mDataTS->data().size();
 
         // Set Combo list for viewing data
-        this->ui->comboBox->addItem(metricProps.at(i));
+        //this->ui->comboBox->addItem(metricProps.at(i));
 
         // Generate VTKTable for this property
         vtkSmartPointer<vtkTable> responseTable_ =
@@ -367,9 +369,6 @@ bool Chart_response::initializeTimeSeries(int plotType,
         {
             time_->SetValue(j,mDataTS->time(j));
             value_->SetValue(j,mDataTS->data(j));
-
-            std::cout << j << " Time " << mDataTS->time(j)
-                      << " Data " << mDataTS->data(j) << std::endl;
         }
 
         // Create a plot for each table
@@ -401,14 +400,14 @@ bool Chart_response::initializeTimeSeries(int plotType,
                                                           c_str()));
 
     // Display
-    this->ui->dataScrollArea->setWidget(tableView_->GetWidget());
+    //this->ui->dataScrollArea->setWidget(tableView_->GetWidget());
     this->ui->scrollArea->setWidget(this->responseQtTable);
 
     // Set combo box
-    connect(this->ui->comboBox,SIGNAL(currentIndexChanged(QString)),
-            this,SLOT(changeDataTableView(QString)));
+    //connect(this->ui->comboBox,SIGNAL(currentIndexChanged(QString)),
+            //this,SLOT(changeDataTableView(QString)));
 
-    this->ui->comboBox->setCurrentIndex(0);
+    //this->ui->comboBox->setCurrentIndex(0);
     this->changeDataTableView(metricProps.at(0));
 
     return true;
@@ -521,7 +520,7 @@ bool Chart_response::initializeDistribution(int plotType,
     chart_->GetAxis(vtkAxis::LEFT)->SetTitle(vtkStdString("PDF"));
 
     // Display
-    this->ui->dataScrollArea->setWidget(tableView_->GetWidget());
+    //this->ui->dataScrollArea->setWidget(tableView_->GetWidget());
     this->ui->scrollArea->setWidget(this->responseQtTable);
 
     return true;

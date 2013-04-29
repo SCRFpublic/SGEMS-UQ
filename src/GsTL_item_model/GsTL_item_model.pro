@@ -5,16 +5,16 @@ QT += core \
     gui \
     xml \
     sql
-TARGET = /home/lewisli/code-dev/ar2gems/plugins/Geostat/GsTL_item_model
+TARGET = /home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/Geostat/GsTL_item_model
 CONFIG += PLUGIN
 CONFIG += debug
 TEMPLATE = lib
-INCLUDEPATH += /home/lewisli/code-dev/ar2gems/ar2GsTL
-INCLUDEPATH += /home/lewisli/code-dev/ar2gems
-INCLUDEPATH += /home/lewisli/code-dev/metrics-ar2gems/sgems-metrics
-LIBS += -L/home/lewisli/code-dev/ar2gems/lib/linux \
-    -L/home/lewisli/code-dev/ar2gems/plugins/designer \
-    -L/home/lewisli/code-dev/ar2gems/plugins/Geostat \
+INCLUDEPATH += /home/lewisli/code-dev/ar2tech-SGeMS-public/ar2GsTL
+INCLUDEPATH += /home/lewisli/code-dev/ar2tech-SGeMS-public
+INCLUDEPATH += /home/lewisli/code-dev/SGEMS-UQ/src/sgems-metrics
+LIBS += -L/home/lewisli/code-dev/ar2tech-SGeMS-public/lib/linux \
+    -L/home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/designer \
+    -L/home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/Geostat \
     -lGsTLAppli_actions \
     -lGsTLAppli_appli \
     -lGsTLAppli_extragui \

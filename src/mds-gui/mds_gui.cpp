@@ -1,7 +1,6 @@
 #include "mds_gui.h"
 #include "metric_explorer.h"
 #include "data_analyst_from_metric.h"
-//#include "data_analyst_from_property.h"
 #include "mds_space_analyst.h"
 #include "mdsspaceanalystframe.h"
 #include "metricmanager/mdsmetricmanagerframe.h"
@@ -63,8 +62,8 @@ mds_gui::mds_gui(GsTL_project* proj, QWidget *parent)
     QAction* actionGeoVizu =
             toolbar->addAction(
                 QIcon(":/icons/MdsSpace.png"),"Uncertainty \nSpace");
-    actionGeoVizu->
-            setStatusTip(tr("Explore Uncertainty space with Multi-dimensional scaling Two"));
+    actionGeoVizu->setStatusTip(tr(
+               "Explore Uncertainty space with Multi-dimensional scaling Two"));
 
     toolbar->addSeparator();
 
@@ -108,8 +107,6 @@ mds_gui::mds_gui(GsTL_project* proj, QWidget *parent)
     DataAnalystFromMetric *secondPageWidget =
             new DataAnalystFromMetric(proj_, this);
     secondPageWidget->setTopLevelMetricModel(topLevelMetricModel_);
-    //  DataAnalystFromProperty *thirdPageWidget = new DataAnalystFromProperty(proj_, this);
-    //MdsSpaceAnalyst *fourthPageWidget = new MdsSpaceAnalyst(proj_, this);
     MDSSpaceAnalystFrame *fourthPageWidget =
             new MDSSpaceAnalystFrame(proj_,this);
 
@@ -118,7 +115,6 @@ mds_gui::mds_gui(GsTL_project* proj, QWidget *parent)
 
     stackedWidget->addWidget(firstPageWidget);
     stackedWidget->addWidget(secondPageWidget);
-    //  stackedWidget->addWidget(thirdPageWidget);
     stackedWidget->addWidget(new QWidget(stackedWidget));
     stackedWidget->addWidget(fourthPageWidget);
     stackedWidget->addWidget(fifthPageWidget);

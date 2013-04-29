@@ -59,18 +59,11 @@ bool Metric_algo_stats::initialize( const Parameters_handler* parameters,
 	const Parameters_handler_xml* xml_parameters = dynamic_cast<const Parameters_handler_xml*>(parameters);
 
 	paramXml_ = xml_parameters->xmlDomElement("");
-	if(paramXml_.isNull()) {
+    if(paramXml_.isNull())
+    {
 
 	}
 
-	/*
-	QTextStream streamtext;
-	paramXml_.save(streamtext,2);
-	std::cout<<streamtext.readAll().toStdString();
-
-	paramXml_ = xml_parameters->xmlDomElement("parameters");
-	paramXml_ = xml_parameters->xmlDomElement("algorithm");
-*/
 	return errors->empty();
 
 }

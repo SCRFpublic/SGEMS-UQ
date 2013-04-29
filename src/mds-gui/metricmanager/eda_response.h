@@ -4,7 +4,7 @@
 #include <QObject>
 #include <GsTLAppli/charts/chart_creator.h>
 #include <GsTLAppli/charts/chart_mdi_area.h>
-
+#include <GsTLAppli/gui/common.h>
 
 #include <QDialog>
 #include <QMainWindow>
@@ -69,7 +69,7 @@ private:
 
 
 
-class METRICSGUI_DECL EDA_response_factory : public Chart_creator_factory 
+class METRICSGUI_DECL EDA_response_factory : public Chart_creator_factory
 {
 
 public:

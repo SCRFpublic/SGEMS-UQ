@@ -84,7 +84,6 @@ void MultipleMetricDataSelector::setMetricsList(const QStringList& propSelection
         std::set_intersection(propMetrics.begin(), propMetrics.end(),
                               commonMetricsCopy.begin(), commonMetricsCopy.end(),
                               std::inserter(commonMetrics,commonMetrics.begin()));
-        std::cerr << propNames_.at(i).toStdString() << " " << "common size " << commonMetricsCopy.size() << " metric count" << propMetrics.size()<< std::endl;
 
         if(  commonMetrics.empty() ) return;
 

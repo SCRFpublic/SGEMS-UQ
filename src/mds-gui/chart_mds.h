@@ -91,7 +91,7 @@
 #include <parameterExplorer/mdsparameterexplorertabwidget.h>
 
 #define VTK_CREATE(type, name) \
-        vtkSmartPointer<type> name = vtkSmartPointer<type>::New()
+    vtkSmartPointer<type> name = vtkSmartPointer<type>::New()
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -101,6 +101,7 @@
 #include <QSpinBox>
 #include <QStringListModel>
 #include <QFile>
+#include <QFileDialog>
 
 #include <vector>
 #include <utility>
@@ -110,7 +111,7 @@
 class clusterParameterGraph;
 
 namespace Ui {
-    class MDSUncertainitySubWindow;
+class MDSUncertainitySubWindow;
 }
 
 class METRICSGUI_DECL Chart_mds : public Chart_base
@@ -131,26 +132,25 @@ private:
     Ui::MDSUncertainitySubWindow *ui;
 
 public slots:
-
-        void create_clusters_button_clicked();
-        void colorCluster(QModelIndex index);
-        void getSelectedPropName(){}
-        void highlightPoints(QStringList & selPoints);
-
-protected :
-        void setUpVtkRenderingWidget();
-        void updatePointLocations();
-
-        // Set up cluster widget
-        void setupClusterWidget();
-
-        // Generate clusters
-        void generateClusters();
-        void updateClusterView();
+    void create_clusters_button_clicked();
+    void colorCluster(QModelIndex index);
+    void getSelectedPropName(){}
+    void openFileDialog();
+    void highlightPoints(QStringList & selPoints);
+    void saveClusterInfo();
 
 protected :
+    void setUpVtkRenderingWidget();
+    void updatePointLocations();
 
-   Chart_mdi_area* mdi_area_;
+    // Set up cluster widget
+    void setupClusterWidget();
+
+    // Generate clusters
+    void generateClusters();
+    void updateClusterView();
+
+    Chart_mdi_area* mdi_area_;
 
     int nPoints_;
     std::pair<int,int> selectedPairPoints_;

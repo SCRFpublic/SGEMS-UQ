@@ -23,7 +23,10 @@
 #include <vtkFloatArray.h>
 #include <vtkIntArray.h>
 
+#include <eigen3/Eigen/Dense>
 #include <vector>
+
+using namespace Eigen;
 
 namespace Ui {
     class param_plot_window;
@@ -38,9 +41,12 @@ public:
 
     void plot(QStringList &properties, std::vector<float> &values,
               QString parameter);
+
+    void plot(QStringList &parameters, VectorXf &senVector);
+
     ~param_plot_window();
 
-private:
+protected:
     QVTKWidget *qvtkWidget_;
     vtkSmartPointer<vtkChartXY> chart_;
     vtkSmartPointer<vtkContextView> view_;

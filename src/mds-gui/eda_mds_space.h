@@ -3,7 +3,9 @@
 
 #include <QObject>
 #include <GsTLAppli/charts/chart_creator.h>
+#include <GsTLAppli/charts/chart_base.h>
 #include <GsTLAppli/charts/chart_mdi_area.h>
+
 #include <common.h>
 #include <QFrame>
 #include <GsTLAppli/appli/project.h>
@@ -77,7 +79,7 @@ protected:
 
 
 
-class METRICSGUI_DECL EDA_mds_space_factory : public Chart_creator_factory 
+class METRICSGUI_DECL EDA_mds_space_factory : public Chart_creator_factory
 {
 
 public:

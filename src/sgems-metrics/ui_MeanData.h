@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MeanData.ui'
 **
-** Created: Tue Dec 4 18:01:11 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Mon Apr 29 12:05:02 2013
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

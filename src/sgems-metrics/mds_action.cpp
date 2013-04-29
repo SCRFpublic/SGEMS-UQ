@@ -24,14 +24,13 @@
 #include <sstream>
 
 
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 
 using namespace Eigen;
 using namespace std;
 using Eigen::MatrixXf;
 
 Named_interface* MDS_action::create_new_interface( std::string& ){
-	cout << "createing new MDS interface" << endl;
 	return new MDS_action;
 }
 
@@ -94,8 +93,7 @@ bool MDS_action::init(std::string& parameters, GsTL_project* proj,
 	std::vector<std::string> mdata_names; // vector of metric names
 	for( ; !elemMetric.isNull(); elemMetric = elemMetric.nextSiblingElement("Metric")  ) {
 		std::string metric_name = elemMetric.attribute("name").toStdString();
-		std::cout << "Metric name " << metric_name << std::endl;
-		mdata_names.push_back(metric_name);
+        mdata_names.push_back(metric_name);
 	}
 
 	QDomElement elem = root.firstChildElement("Grid");
@@ -104,8 +102,7 @@ bool MDS_action::init(std::string& parameters, GsTL_project* proj,
 		QDomElement gridProps = elem.firstChildElement("Property");
 		for (; !gridProps.isNull(); gridProps = gridProps.nextSiblingElement("Property")) {
 			std::string property_name = gridProps.attribute("name").toStdString();
-			std::cout << "property name " << property_name << std::endl;
-			props_grid.push_back(MultiDimScalingSpace::grid_prop_pairT(grid_name,property_name));
+            props_grid.push_back(MultiDimScalingSpace::grid_prop_pairT(grid_name,property_name));
 			MetricDataCollection mdataCollection =
 					mDataRegistrar->getMetricDataCollection(grid_name, property_name, mdata_names);
 			if(mdataCollection.empty()) {
@@ -186,14 +183,18 @@ bool MDS_action::initFromDom(QDomDocument parameters, GsTL_project* proj,
 		QDomElement gridProps = elem.firstChildElement("Property");
 		for (; !gridProps.isNull(); gridProps = gridProps.nextSiblingElement("Property"))
 		{
-			std::string property_name = gridProps.attribute("name").toStdString();
-                        std::cout << "reading grid " << grid_name << std::endl;
-			props_grid.push_back(MultiDimScalingSpace::grid_prop_pairT(grid_name,property_name));
+            std::string property_name =
+                    gridProps.attribute("name").toStdString();
+            props_grid.push_back(MultiDimScalingSpace::grid_prop_pairT(
+                                     grid_name,property_name));
 			MetricDataCollection mdataCollection =
-					mDataRegistrar->getMetricDataCollection(grid_name, property_name, mdata_names);
+                    mDataRegistrar->getMetricDataCollection(grid_name,
+                                                            property_name, mdata_names);
 
                         if(mdataCollection.empty()) {
-				errors->report( "Some metric data for the property "+property_name+ " on the grid "+grid_name+" could not be found" );
+                errors->report( "Some metric data for the property "+
+                                property_name+ " on the grid "+grid_name+
+                                " could not be found" );
 				return false;
 			}
 			mdataCollections_.push_back(mdataCollection);

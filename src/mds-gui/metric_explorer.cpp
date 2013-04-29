@@ -61,7 +61,8 @@ MetricExplorer::MetricExplorer(GsTL_project* proj, QWidget *parent) :
     connect(metricsView_,SIGNAL(activated( const QModelIndex &  )),
             paramView, SLOT( showParameters(const QModelIndex& ) ) );
 
-    QAction* saveAct = new QAction(QIcon(":/images/save.png"), tr("&Save to file"), this);
+    QAction* saveAct = new QAction(QIcon(":/images/save.png"),
+                                   tr("&Save to file"), this);
     connect(saveAct, SIGNAL(triggered()), this, SLOT(SaveToFileClicked()));
     metricsView_->addAction(saveAct);
 }

@@ -1,5 +1,6 @@
 #include "chart_mds.h"
 #include "ui_mdsuncertainitysubwindow.h"
+#include <QFile>
 
 static unsigned char red[3] = {175, 0, 0};
 static unsigned char green[3] = {0, 255, 0};
@@ -7,7 +8,7 @@ static unsigned char blue[3] = {30, 144, 255};
 static unsigned char white[3]= {255,255,255};
 
 Chart_mds::Chart_mds(QString mdsObjectName, Chart_mdi_area* mdi_area,
-                                                   QWidget* parent)
+                     QWidget* parent)
     :Chart_base(parent), mdi_area_(mdi_area),mdsObjectName_(mdsObjectName),
       ui(new Ui::MDSUncertainitySubWindow)
 {
@@ -56,7 +57,7 @@ Chart_mds::Chart_mds(QString mdsObjectName, Chart_mdi_area* mdi_area,
     this->ui->toolBox->addItem(parameterExploreModule, "Parameter Explorer");
 
 
-//    this->ui->toolBox->setMinimumWidth(410);
+    //    this->ui->toolBox->setMinimumWidth(410);
     this->ui->toolBox->setMaximumWidth(410);
 
     // Write tree
@@ -66,9 +67,10 @@ Chart_mds::Chart_mds(QString mdsObjectName, Chart_mdi_area* mdi_area,
             SLOT(create_clusters_button_clicked()));
     connect(this->ui->clusterTreeView,SIGNAL(clicked(QModelIndex)),this,
             SLOT(colorCluster(QModelIndex)));
-
     connect(parameterExploreModule,SIGNAL(highlightCommonModels(QStringList&)),
             this,SLOT(highlightPoints(QStringList&)));
+    connect(ui->browsePushButton,SIGNAL(clicked()),this,SLOT(openFileDialog()));
+    connect(ui->savePushButton,SIGNAL(clicked()),this,SLOT(saveClusterInfo()));
 
     this->updatePointLocations();
 
@@ -392,7 +394,6 @@ void Chart_mds::generateClusters()
 
         // Write the number of properties in the ith cluster
         currentCluster.numComponents = currentCluster.components.size();
-        std::cout << "Cluster " << i << " has center at " << currentCluster.centerName.toStdString() << std::endl;
 
         // Put the ith cluster onto our current block
         kmeansBlock.block.push_back(currentCluster);
@@ -411,8 +412,8 @@ void Chart_mds::generateClusters()
     this->parameterExploreModule->loadClusterComboBox();
 }
 QList<QStandardItem *> Chart_mds::prepareRow(const QString &first,
-                                                            const QString &second,
-                                                            const QString &third)
+                                             const QString &second,
+                                             const QString &third)
 {
     QList<QStandardItem *> rowItems;
     rowItems << new QStandardItem(first);
@@ -551,7 +552,6 @@ void Chart_mds::updateClusterView()
     this->ui->clusterTreeView->resizeColumnToContents(1);
     this->ui->clusterTreeView->expandAll();
 }
-
 void Chart_mds::highlightPoints(QStringList &selPoints)
 {
     // Setup colors
@@ -578,5 +578,59 @@ void Chart_mds::highlightPoints(QStringList &selPoints)
     vtkData_->Modified();
     qvtkWidget_->GetRenderWindow()->GetRenderers()->GetFirstRenderer()->Render();
     qvtkWidget_->repaint();
+
+}
+
+void Chart_mds::openFileDialog()
+{
+    QString caption = tr("Save As");
+    QString currentDirectory = QDir::current().path();
+    QString filter = tr("Text files (*.txt)");
+    QString fileName = QFileDialog::getSaveFileName (this,
+                                                     caption,
+                                                     currentDirectory,
+                                                     filter);
+    if (!fileName.contains(".txt"))
+        fileName.append(QString(".txt"));
+
+    ui->filePathLineEdit->setText(fileName);
+
+}
+
+void Chart_mds::saveClusterInfo()
+{
+    // Get Filename
+    if (ui->filePathLineEdit->text().size() == 0)
+    {
+        QMessageBox msgBox;
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setText("Specify Save Location");
+        msgBox.exec();
+        return;
+    }
+    else
+    {
+        QFile file(ui->filePathLineEdit->text());
+        file.open(QIODevice::WriteOnly | QIODevice::Text);
+        QTextStream out(&file);
+
+
+        for (unsigned int i = 0; i < this->kmeansResults.size(); i++)
+        {
+
+            MDSUtil::clusterBlock cBlock = this->kmeansResults.at(i);
+            out << "Instance " << i << ": Used " << cBlock.numBlock << " Clusters\n";
+
+            for (unsigned int j = 0; j < cBlock.numBlock; j++)
+            {
+                MDSUtil::cluster currentClu =  cBlock.block.at(j);
+                out << "Cluster " << j << " : " << currentClu.centerName <<"\n";
+            }
+            out << "\n";
+        }
+
+        file.close();
+
+    }
 
 }

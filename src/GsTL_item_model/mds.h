@@ -7,7 +7,7 @@ alexchia@stanford.edu
 */
 
 #include "common.h"
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <iostream>
 
 using namespace Eigen;
@@ -29,19 +29,15 @@ bool mds::do_mds(MatrixXf& distance, int numElts, float* output_data, int out_di
 	int n = numElts;
 	int i, j;
 
-	// debug
-	cout << "Distance matrix:" << endl;
-	cout << distance << endl;
-
 	// assert distance matrix dimensions
 	if (distance.cols() != distance.rows()) {
-		cout << "Error: Distance matrix should be square and symmetric." << endl;
+        cerr << "Error: Distance matrix should be square and symmetric." << endl;
 		return false;
 	}
 
 	// output dimensions shouldn't be more than the rank of the matrix
 	if (distance.rows() < out_dimension) {
-		cout << "Error: Output dimension greater than distance matrix dimension." << endl;
+        cerr << "Error: Output dimension greater than distance matrix dimension." << endl;
 		return false;
 	}
 

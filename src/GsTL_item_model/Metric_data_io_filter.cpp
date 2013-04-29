@@ -44,7 +44,7 @@ Named_interface* Metric_data_input_filter::read( const std::string& filename,
                                                  std::string* errors )
 {
 
-    SmartPtr<Named_interface> ni = 
+    SmartPtr<Named_interface> ni =
             Root::instance()->interface( metricData_manager + "/metricRegistrar");
 
     MetricDataManager* md_manager = dynamic_cast<MetricDataManager*>(ni.raw_ptr());
@@ -207,7 +207,7 @@ bool Metric_data_project_output_filter::write( std::string outfile, const Named_
 
     QString dirname = outfile.c_str();
     if( !dirname.endsWith( ".metrics" ) && !dirname.endsWith( ".metrics/" ) )
-	dirname.append( ".metrics" );
+        dirname.append( ".metrics" );
 
     QDir dir(dirname);
     if (dir.exists()) {
@@ -321,15 +321,14 @@ Named_interface* Metric_data_project_input_filter::read( const std::string& file
 
         if( !mdata_input_filter.can_handle(filename))
         {
-           // qDebug() << "Can't handle " << QString::fromStdString(filename);
+            // qDebug() << "Can't handle " << QString::fromStdString(filename);
             continue;
         }
         Named_interface* ni = mdata_input_filter.read(filename,errors);
         {
             if (ni == 0)
             {
-              //  std::cerr << "COULD NOT READ " << filename << " " << *errors<<std::endl;
-               //       return 0;
+                return 0;
             }
         }
     }

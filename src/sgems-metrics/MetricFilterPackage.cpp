@@ -51,13 +51,14 @@ MetricData* MetricFilterVariance::computeMetricData(Geostat_grid* input_grid,
 
     GsTLGridProperty::iterator it = input_prop->begin();
 
-    for ( ; it != input_prop->end(); ++it) {
-        std::cout << "printing prop parameters " << std::endl;
+    for ( ; it != input_prop->end(); ++it)
+    {
         float elt = *it;
         sum += elt;
         sum2 += elt * elt;
         n++;
     }
+
     float ex = sum / (float)n;
     float ex2 = sum2 / (float) n;
     float variance = ex2 - ex * ex; // Var[X] = E[X^2] - E[X]^2]

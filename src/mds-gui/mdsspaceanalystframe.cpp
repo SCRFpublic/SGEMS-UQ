@@ -55,9 +55,6 @@ void MDSSpaceAnalystFrame::createNewMDSSpace()
     MDSSpaceCreatorDialog* mdsSpaceCreatorDialog =
             new MDSSpaceCreatorDialog(proj_,this);
     mdsSpaceCreatorDialog->show();
-
-    //  connect(mdsSpaceCreatorDialog,SIGNAL(updateSpaceList()),
-    //          this,SLOT(updateModel()));
 }
 
 void MDSSpaceAnalystFrame::deleteMDSSpace()

@@ -394,7 +394,8 @@ void MDSUncertainitySubWindow::colorCluster(QModelIndex index)
 
     if (parentIndex != QModelIndex())
     {
-        QString clusterName = clusterStandardModel->data(parentIndex,Qt::DisplayRole).toString();
+        QString clusterName = clusterStandardModel->data(
+                    parentIndex,Qt::DisplayRole).toString();
 
         // Get the number of clusters from the cluster name
         QString trunClustName = clusterName.remove("Number of Clusters: ");

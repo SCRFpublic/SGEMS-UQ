@@ -80,10 +80,10 @@ bool ChartDataFromPropertyMdiSubWindow::initialize(QString metricName, QStringLi
 		arrY_->SetValue(i,mdata->data(0));
 
 	}
-	table_->Modified();
+//	table_->Update();
 
 	vtkPlot *bar = chart_->AddPlot(vtkChart::BAR);
-	bar->SetInputData(table_, 0, 1);
+    bar->SetInputData(table_, 0, 1);
 
 
 	tableView_->SetSplitMultiComponentColumns(true);

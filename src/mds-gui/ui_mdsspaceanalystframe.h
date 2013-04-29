@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mdsspaceanalystframe.ui'
 **
-** Created: Tue Dec 4 18:01:25 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Fri Apr 26 17:30:34 2013
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

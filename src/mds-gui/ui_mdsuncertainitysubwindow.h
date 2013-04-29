@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mdsuncertainitysubwindow.ui'
 **
-** Created: Tue Dec 4 18:01:25 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Fri Apr 26 17:30:34 2013
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -17,6 +17,7 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QScrollArea>
 #include <QtGui/QSpinBox>
@@ -50,6 +51,9 @@ public:
     QSpinBox *numClusterSpinBox;
     QPushButton *generateClusters;
     QTreeView *clusterTreeView;
+    QPushButton *savePushButton;
+    QLineEdit *filePathLineEdit;
+    QPushButton *browsePushButton;
     QWidget *paramaterPage;
 
     void setupUi(QWidget *MDSUncertainitySubWindow)
@@ -72,7 +76,7 @@ public:
         vtkScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 175, 661));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 76, 661));
         vtkScrollArea->setWidget(scrollAreaWidgetContents);
         splitter->addWidget(vtkScrollArea);
         toolBox = new QToolBox(splitter);
@@ -86,7 +90,7 @@ public:
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
         page_2->setEnabled(false);
-        page_2->setGeometry(QRect(0, 0, 765, 582));
+        page_2->setGeometry(QRect(0, 0, 863, 570));
         verticalLayout_3 = new QVBoxLayout(page_2);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         tableWidget = new QTableWidget(page_2);
@@ -98,7 +102,7 @@ public:
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));
         page_3->setEnabled(false);
-        page_3->setGeometry(QRect(0, 0, 471, 433));
+        page_3->setGeometry(QRect(0, 0, 863, 570));
         verticalLayout_2 = new QVBoxLayout(page_3);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         clusterArea = new QScrollArea(page_3);
@@ -106,7 +110,7 @@ public:
         clusterArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 451, 413));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 843, 550));
         gridLayoutWidget_2 = new QWidget(scrollAreaWidgetContents_2);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
         gridLayoutWidget_2->setGeometry(QRect(0, 10, 371, 231));
@@ -117,7 +121,7 @@ public:
         label = new QLabel(gridLayoutWidget_2);
         label->setObjectName(QString::fromUtf8("label"));
 
-        clusterLayout->addWidget(label, 0, 0, 1, 2);
+        clusterLayout->addWidget(label, 0, 0, 1, 3);
 
         numClusterSpinBox = new QSpinBox(gridLayoutWidget_2);
         numClusterSpinBox->setObjectName(QString::fromUtf8("numClusterSpinBox"));
@@ -125,18 +129,33 @@ public:
         numClusterSpinBox->setMaximum(200);
         numClusterSpinBox->setValue(5);
 
-        clusterLayout->addWidget(numClusterSpinBox, 3, 0, 1, 1);
+        clusterLayout->addWidget(numClusterSpinBox, 3, 0, 1, 2);
 
         generateClusters = new QPushButton(gridLayoutWidget_2);
         generateClusters->setObjectName(QString::fromUtf8("generateClusters"));
 
-        clusterLayout->addWidget(generateClusters, 3, 1, 1, 1);
+        clusterLayout->addWidget(generateClusters, 3, 2, 1, 1);
 
         clusterTreeView = new QTreeView(gridLayoutWidget_2);
         clusterTreeView->setObjectName(QString::fromUtf8("clusterTreeView"));
         clusterTreeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-        clusterLayout->addWidget(clusterTreeView, 1, 0, 1, 2);
+        clusterLayout->addWidget(clusterTreeView, 1, 0, 1, 3);
+
+        savePushButton = new QPushButton(gridLayoutWidget_2);
+        savePushButton->setObjectName(QString::fromUtf8("savePushButton"));
+
+        clusterLayout->addWidget(savePushButton, 2, 2, 1, 1);
+
+        filePathLineEdit = new QLineEdit(gridLayoutWidget_2);
+        filePathLineEdit->setObjectName(QString::fromUtf8("filePathLineEdit"));
+
+        clusterLayout->addWidget(filePathLineEdit, 2, 0, 1, 1);
+
+        browsePushButton = new QPushButton(gridLayoutWidget_2);
+        browsePushButton->setObjectName(QString::fromUtf8("browsePushButton"));
+
+        clusterLayout->addWidget(browsePushButton, 2, 1, 1, 1);
 
         clusterArea->setWidget(scrollAreaWidgetContents_2);
 
@@ -145,7 +164,7 @@ public:
         toolBox->addItem(page_3, QString::fromUtf8("Page 2"));
         paramaterPage = new QWidget();
         paramaterPage->setObjectName(QString::fromUtf8("paramaterPage"));
-        paramaterPage->setGeometry(QRect(0, 0, 471, 433));
+        paramaterPage->setGeometry(QRect(0, 0, 863, 570));
         toolBox->addItem(paramaterPage, QString::fromUtf8("Parameters"));
         splitter->addWidget(toolBox);
 
@@ -154,7 +173,7 @@ public:
 
         retranslateUi(MDSUncertainitySubWindow);
 
-        toolBox->setCurrentIndex(0);
+        toolBox->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MDSUncertainitySubWindow);
@@ -166,6 +185,8 @@ public:
         toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("MDSUncertainitySubWindow", "Page 1", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MDSUncertainitySubWindow", "K-Means Clustering", 0, QApplication::UnicodeUTF8));
         generateClusters->setText(QApplication::translate("MDSUncertainitySubWindow", "Generate Kmeans", 0, QApplication::UnicodeUTF8));
+        savePushButton->setText(QApplication::translate("MDSUncertainitySubWindow", "Save", 0, QApplication::UnicodeUTF8));
+        browsePushButton->setText(QApplication::translate("MDSUncertainitySubWindow", "Browse", 0, QApplication::UnicodeUTF8));
         toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("MDSUncertainitySubWindow", "Page 2", 0, QApplication::UnicodeUTF8));
         toolBox->setItemText(toolBox->indexOf(paramaterPage), QApplication::translate("MDSUncertainitySubWindow", "Parameters", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

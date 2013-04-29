@@ -34,7 +34,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>175</width>
+         <width>76</width>
          <height>661</height>
         </rect>
        </property>
@@ -54,7 +54,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_2">
        <property name="enabled">
@@ -64,8 +64,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>765</width>
-         <height>582</height>
+         <width>863</width>
+         <height>570</height>
         </rect>
        </property>
        <attribute name="label">
@@ -85,8 +85,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>471</width>
-         <height>433</height>
+         <width>863</width>
+         <height>570</height>
         </rect>
        </property>
        <attribute name="label">
@@ -103,8 +103,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>451</width>
-             <height>413</height>
+             <width>843</width>
+             <height>550</height>
             </rect>
            </property>
            <widget class="QWidget" name="gridLayoutWidget_2">
@@ -120,14 +120,14 @@
              <property name="sizeConstraint">
               <enum>QLayout::SetNoConstraint</enum>
              </property>
-             <item row="0" column="0" colspan="2">
+             <item row="0" column="0" colspan="3">
               <widget class="QLabel" name="label">
                <property name="text">
                 <string>K-Means Clustering</string>
                </property>
               </widget>
              </item>
-             <item row="3" column="0">
+             <item row="3" column="0" colspan="2">
               <widget class="QSpinBox" name="numClusterSpinBox">
                <property name="minimum">
                 <number>1</number>
@@ -140,17 +140,34 @@
                </property>
               </widget>
              </item>
-             <item row="3" column="1">
+             <item row="3" column="2">
               <widget class="QPushButton" name="generateClusters">
                <property name="text">
                 <string>Generate Kmeans</string>
                </property>
               </widget>
              </item>
-             <item row="1" column="0" colspan="2">
+             <item row="1" column="0" colspan="3">
               <widget class="QTreeView" name="clusterTreeView">
                <property name="editTriggers">
                 <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QPushButton" name="savePushButton">
+               <property name="text">
+                <string>Save</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLineEdit" name="filePathLineEdit"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="browsePushButton">
+               <property name="text">
+                <string>Browse</string>
                </property>
               </widget>
              </item>
@@ -166,8 +183,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>471</width>
-         <height>433</height>
+         <width>863</width>
+         <height>570</height>
         </rect>
        </property>
        <attribute name="label">

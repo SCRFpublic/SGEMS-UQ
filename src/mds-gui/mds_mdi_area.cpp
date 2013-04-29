@@ -19,8 +19,7 @@
 #include <QDragEnterEvent>
 #include <QDropEvent>
 
-#include <parameterExplorer/parameterplotsubwindow.h>
-#include <parameterExplorer/sharedparametersubwindow.h>
+
 
 #include <utility>
 
@@ -83,7 +82,6 @@ void MdsMdiArea::addChart(QString mdsObjectName)
 
     if (!hashObjectWindows_.contains(mdsObjectName))
     {
-        std::cerr << "Generating viewer for " << mdsObjectName.toStdString() << std::endl;
         SmartPtr<Named_interface> ni =
                 Root::instance()->interface( mds_manager+"/"+
                                              mdsObjectName.toStdString());
@@ -102,92 +100,7 @@ void MdsMdiArea::addChart(QString mdsObjectName)
         mdsSubViewer->setWidget(mdsSubView);
         this->addSubWindow(mdsSubViewer);
 
-        //mdsSubViewer->show();
         mdsSubViewer->showMaximized();
-        // mdsSubViewer->setGeometry(0,0,1200,800);
-
-        //        connect(mdsSubView->parameterExploreModule,
-        //                SIGNAL(updateParameterPlots(
-        //                           std::vector<parameterPlotSubWindow*>)),
-        //                this,
-        //                SLOT(addParameterSubViewer(
-        //                         std::vector<parameterPlotSubWindow*>)));
-
-        //        connect(mdsSubView->parameterExploreModule,
-        //                SIGNAL(updateSharedPlot(sharedParameterSubwindow*)),
-        //                this,
-        //                SLOT(addSharedParamSubViewer(sharedParameterSubwindow*)));
-
-
     }
 }
 
-
-void MdsMdiArea::addParameterSubViewer(std::vector<parameterPlotSubWindow*>
-                                       subWindows)
-{
-
-    for (unsigned int i = 0; i < subWindows.size(); ++i)
-    {
-        QMdiSubWindow *viewer = new QMdiSubWindow(this);
-        viewer->setWidget(subWindows.at(i));
-        this->addSubWindow(viewer);
-        viewer->show();
-        //        viewer->setWindowTitle(subWindows.at(i)->getParameterName());
-        //        viewer->setGeometry(0,0,480,320);
-        //        viewer->setMaximumSize(480,320);
-        //        viewer->setMinimumSize(480,320);
-
-    }
-
-
-}
-
-void MdsMdiArea::addSharedParamSubViewer(sharedParameterSubwindow *subWindow)
-{
-    QMdiSubWindow *viewer = new QMdiSubWindow(this);
-    viewer->setWidget(subWindow);
-    this->addSubWindow(viewer);
-    viewer->show();
-    //     viewer->setGeometry(0,0,400,400);
-    //     viewer->setMaximumSize(400,400);
-    //     viewer->setMinimumSize(400,400);
-
-}
-
-// Add Parameter Chart to MDI Window
-
-void MdsMdiArea::showParametersChart(QString mdsObjectName)
-{
-    //    // Get sub window that is displaying parameter chart
-
-    //    MDSUncertainitySubWindow *mdsSubView =
-    //            hashObjectWindows_[mdsObjectName].first;
-
-    //    //    QMdiSubWindow *clusterParameterViewer =
-    //    //            hashObjectWindows_[mdsObjectName].second;
-
-    //    //QMdiSubWindow *viewer = new QMdiSubWindow(this);
-
-    //    parameterPlotSubWindow *test1 = new parameterPlotSubWindow(this);
-    //    parameterPlotSubWindow *test2 = new parameterPlotSubWindow(this);
-    //    parameterPlotSubWindow *test3 = new parameterPlotSubWindow(this);
-    //    parameterPlotSubWindow *test4 = new parameterPlotSubWindow(this);
-
-
-    //    std::vector<parameterPlotSubWindow*> testVector;
-
-    //    testVector.push_back(test1);
-    //    testVector.push_back(test2);
-    //    testVector.push_back(test3);
-    //    testVector.push_back(test4);
-
-    //    this->addParameterSubViewer(testVector);
-
-    //  clusterParameterViewer->setWidget(test);
-
-    // Todo: Make sure cluster parameter wasn't closed
-    //    clusterParameterViewer->setWidget(mdsSubView->getClusterAddress());
-    //    clusterParameterViewer->setGeometry(0,0,640,640);
-    //    clusterParameterViewer->show();
-}

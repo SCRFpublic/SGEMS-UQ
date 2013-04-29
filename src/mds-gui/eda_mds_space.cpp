@@ -60,9 +60,6 @@ void EDA_mds_space::createNewMDSSpace()
     MDSSpaceCreatorDialog* mdsSpaceCreatorDialog =
             new MDSSpaceCreatorDialog(proj_,this);
     mdsSpaceCreatorDialog->show();
-
-    //  connect(mdsSpaceCreatorDialog,SIGNAL(updateSpaceList()),
-    //          this,SLOT(updateModel()));
 }
 
 void EDA_mds_space::deleteMDSSpace()
@@ -71,8 +68,8 @@ void EDA_mds_space::deleteMDSSpace()
     QModelIndex indexToDelete = mdsListTreeView_->currentIndex();
 
 
-    QString deleteSpaceName = this->proxy_model->data(indexToDelete,
-                                                      Qt::DisplayRole).toString();
+    QString deleteSpaceName =
+            this->proxy_model->data(indexToDelete,Qt::DisplayRole).toString();
 
     deleteSpaceName.prepend("/");
 
@@ -131,30 +128,25 @@ void EDA_mds_space::updateResponseExplorer(QModelIndex mdsSpaceIndex)
 void EDA_mds_space::display_mds_space()
 {
 
-  QModelIndexList mds_indexes =
-          mdsListTreeView_->selectionModel()->selectedIndexes();
-  if(mds_indexes.isEmpty()) return;
+    QModelIndexList mds_indexes =
+            mdsListTreeView_->selectionModel()->selectedIndexes();
+    if(mds_indexes.isEmpty()) return;
 
-  QString mds_object_name = mds_indexes.at(0).data().toString();
+    QString mds_object_name = mds_indexes.at(0).data().toString();
 
-  SmartPtr<Named_interface> ni =
-          Root::instance()->interface( mds_manager+"/"+
-                                        mds_object_name.toStdString());
+    SmartPtr<Named_interface> ni =
+            Root::instance()->interface( mds_manager+"/"+
+                                         mds_object_name.toStdString());
 
-  MultiDimScalingSpace* mdsObject = dynamic_cast
-          <MultiDimScalingSpace*>(ni.raw_ptr());
+    MultiDimScalingSpace* mdsObject = dynamic_cast
+            <MultiDimScalingSpace*>(ni.raw_ptr());
 
-  if(mdsObject==0) return;
+    if(mdsObject==0) return;
 
-  std::cout << "Adding MDS Space for " << mds_object_name.toStdString() << std::endl;
-
-  // Create QWidget Type Uncertaininty SubWindow
-  Chart_mds *chart = new Chart_mds(mds_object_name, mdi_area_, this);
-
-
-  
-  QMdiSubWindow* sub_window = mdi_area_->addSubWindow(chart);
-  sub_window->setAttribute( Qt::WA_DeleteOnClose );
-  sub_window->show();
+    // Create QWidget Type Uncertaininty SubWindow
+    Chart_mds *chart = new Chart_mds(mds_object_name, mdi_area_, this);
+    QMdiSubWindow* sub_window = mdi_area_->addSubWindow(chart);
+    sub_window->setAttribute( Qt::WA_DeleteOnClose );
+    sub_window->show();
 
 }

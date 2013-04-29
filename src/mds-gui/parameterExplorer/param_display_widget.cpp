@@ -11,14 +11,12 @@ param_display_widget::param_display_widget(QWidget *parent,Chart_mdi_area *mdi,
     ui->setupUi(this);
 
     // Set the list
-    for (unsigned int i = 0; i < propertyList_.size(); ++i)
-    {
-        ui->propertyListView->addItem(propertyList_.at(i));
-    }
+    this->realizationsWidget.addItems(propertyList_);
+    ui->realizationsScrollArea->setWidget(&realizationsWidget);
+    realizationsWidget.setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(ui->propertyListView,SIGNAL(itemSelectionChanged()),
+    connect(&realizationsWidget,SIGNAL(itemSelectionChanged()),
             this,SLOT(updateDisplay()));
-
 }
 
 param_display_widget::~param_display_widget()
@@ -29,7 +27,7 @@ param_display_widget::~param_display_widget()
 bool param_display_widget::update()
 {
     QList<QListWidgetItem*> selProp =
-            this->ui->propertyListView->selectedItems();
+            realizationsWidget.selectedItems();
 
     // Make sure something is selected
     if (selProp.size()>0)
@@ -38,6 +36,4 @@ bool param_display_widget::update()
 
         this->ui->parametersTreeScrollArea->setWidget(displayParameterModel);
     }
-
-    return true;
 }

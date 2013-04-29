@@ -61,7 +61,6 @@ void MDSResponseItemDelegate::setEditorData(QWidget *editor,
 {
     if (index.column() == 0)
     {
-        std::cout << "Setting Editor Data for Col 0" << std::endl;
         bool value = index.model()->data(index,Qt::EditRole).toBool();
         QCheckBox *box = static_cast<QCheckBox*>(editor);
         box->setChecked(value);

@@ -10,7 +10,7 @@ alexchia@stanford.edu
 #include <metrics_action_common.h>
 #include <string.h>
 #include <stdlib.h>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <vector>
 #include <string>
 #include <GenericKernels.h>

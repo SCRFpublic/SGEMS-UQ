@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'parameterplotsubwindow.ui'
 **
-** Created: Tue Dec 4 18:01:25 2012
+** Created: Sun Feb 10 01:05:42 2013
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

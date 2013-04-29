@@ -33,11 +33,16 @@
 
 #include <iostream>
 
+#include "param_display_widget.h"
+#include "param_search_widget.h"
+#include "param_sensitivity_widget.h"
+#include "param_plot_widget.h"
+#include "param_cluster_widget.h"
+#include "param_commonmodels_widget.h"
+#include "param_commonparam_widget.h"
+
 class parameterNode;
 class parameterModel;
-
-class parameterPlotSubWindow;
-class sharedParameterSubwindow;
 
 namespace Ui {
 class MDSParameterExplorerTabWidget;
@@ -57,84 +62,30 @@ public:
 protected:
     MultiDimScalingSpace* mdsObject_;
 
-    bool connectToDataBase();
-    QSqlDatabase db;
-    QStringList completeParameterNames;
     QString mdsSpaceName_;
 
-    QStringList selectedClusterProperties;
-    QStringList sharedParameters;
-    QList<QString> generatingAlgorithms;
 
-    QString queryDatabase(QString parameter, QString property);
+    param_display_widget *displayWidget;
+    param_search_widget *searchWidget;
+    param_sensitivity_widget *sensitivityWidget;
+    param_plot_widget *plotWidget;
+    param_cluster_widget *clusterWidget;
+    param_commonModels_widget *commonWidget;
+    param_commonParam_widget *commonParamWidget;
 
-    // This function returns names of parameters that are shared among a list
-    // of properties
-    QStringList getSharedParameters(QStringList properties);
 
 private slots:
-    void addProperty();
-    void highlightProperty();
-    void removeProperty();
 
-    void findCommonParametersStart();
-    void findCommonModelsStart();
-
-    void displayParameters();
-    void displayParametersCommon();
-
-    void updateClusterList(QString numClusters);
-    void updateClusterPropertyList(int row);
-
-    void updateSharedParameters();
-    void updatedParameterPlots();
-
-    // This loads shared parameters on the sharedparam tab
-    void updateSharedParamTab();
-    void updateSharedParamPlot();
 
 signals:
-    void displayClusterChart(QString mdsObjName);
-    void updateParameterPlots(std::vector<parameterPlotSubWindow*> subWindows);
-    void updateSharedPlot(sharedParameterSubwindow* subWindow);
-    void highlightCommonModels(QStringList &selectModels);
+
+        void highlightCommonModels(QStringList &selectModels);
 
 private:
-  Chart_mdi_area* mdi_area_;
-    QStringList completePropertiesList;
-    QStringListModel *completePropertiesListModel;
-    QStringList selectedPropertiesList;
-    QStringListModel *selectedPropertiesListModel;
+    Chart_mdi_area* mdi_area_;
+
     Ui::MDSParameterExplorerTabWidget *ui;
 
-    parameterModel *displayParameterModel;
-    QSqlTableModel* model;
-
-    // Given a list of models find all common parameters
-    QStringList findCommonParameters(QStringList models);
-
-    // Given a model and parameter(s), find all other models that have the
-    // same parameter
-    QStringList findCommonModels(QString model,
-                                 QStringList parameterList);
-
-    QStringList queryValues(QString model,
-                            QStringList parameterList);
-
-    // Generate castable properties
-    bool isCastable(QString parameter, QString property);
-
-    // Generate path - given a parameterNode, this function recursively
-    // geneates the full path of the node
-    void generatePaths(parameterNode *node, QStringList *results);
-
-    // Generate parent path - helper function used by generatePaths to trace
-    // path to parent
-    void generateParentPath(parameterNode *node, QString *currentPath);
-
-    parameterModel *sharedModel;
-
-    parameterModel *sharedParameterTabModel;
 };
 
 #endif // MDSPARAMETEREXPLORERTABWIDGET_H

@@ -66,13 +66,13 @@ void vtkChartMdiSubWindow::buildModel(int i){
 		table_->SetValue(i, 2, sin(i * inc) + 0.0);
 	}
 
-	table_->Modified();
+//	table_->Update();
 	if(i==0) {
 		vtkPlot *line = chart_->AddPlot(vtkChart::BAR);
-		line->SetInputData(table_, 0, 1);
+        line->SetInputData(table_, 0, 1);
 		line->SetColor(255, 0, 0, 255);
 		line = chart_->AddPlot(vtkChart::BAR);
-		line->SetInputData(table_, 0, 2);
+        line->SetInputData(table_, 0, 2);
 		line->SetColor(0, 255, 0, 255);
 		line->SetWidth(2.0);
 		chart_->SetShowLegend(true);
@@ -80,7 +80,7 @@ void vtkChartMdiSubWindow::buildModel(int i){
 	else
 	{
 		vtkPlot *pt = chart_->AddPlot(vtkChart::POINTS);
-		pt->SetInputData(table_, 1, 2);
+        pt->SetInputData(table_, 1, 2);
 		pt->SetColor(255, 0, 0, 255);
 	}
 
@@ -89,37 +89,3 @@ void vtkChartMdiSubWindow::buildModel(int i){
 	tableView_->AddRepresentationFromInput(table_);
 	tableView_->Update();
 }
-/*
-void vtkChartMdiSubWindow::loadData(const QModelIndex& index){
-	std::cout<<"drag and drop working"<< index.row()<<std::endl;
-}
-
-void vtkChartMdiSubWindow::dragEnterEvent(QDragEnterEvent *event)
-{
-	if (event->mimeData()->hasFormat("text/plain")) {
-		event->acceptProposedAction();
-	}
-}
-
-void vtkChartMdiSubWindow::dropEvent(QDropEvent *event)
-{
-	if(event->mimeData()->hasText() ) {
-		QString dropParam = event->mimeData()->text();
-		if( !dropParam.contains("MetricDirectory") ) return;
-
-		QStringList dataDirectoryList = dropParam.split("MetricDirectory");
-		foreach (QString dataDirectory, dataDirectoryList) {
-			QStringList dataDirList = dataDirectory.split("/");
-			this->addDataToChart(dataDirList);
-		}
-	}
-    event->acceptProposedAction();
-}
-
-void vtkChartMdiSubWindow::setData(QStringList dataDirectoryList){
-	foreach (QString dataDirectory, dataDirectoryList) {
-		QStringList dataDirList = dataDirectory.split("/");
-
-	}
-}
-*/

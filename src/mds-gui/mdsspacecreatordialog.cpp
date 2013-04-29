@@ -49,12 +49,6 @@ MDSSpaceCreatorDialog::MDSSpaceCreatorDialog(GsTL_project* proj,
             this,SLOT(generateXML()));
     connect(this->ui->cancelButton,SIGNAL(clicked()),
             this,SLOT(close()));
-
- /*
-    SmartPtr<Named_interface> mdsMan= Root::instance()->interface(mds_manager);
-    Manager* manager = dynamic_cast<Manager*>(mdsMan.raw_ptr());
-    manager->factory("mds_action",MDS_action::create_new_interface);
-*/
 }
 
 MDSSpaceCreatorDialog::~MDSSpaceCreatorDialog()
@@ -98,7 +92,7 @@ void MDSSpaceCreatorDialog::generateSetParameters()
     // Write filename
     QDomElement spaceName = configurationParameter->createElement("Spacename");
     spaceName.setAttribute("name",this->ui->gridNameLineEdit->text());
-    cout << qPrintable(this->ui->gridNameLineEdit->text()) << endl;
+
 
     // Write Kernel Type
     QDomElement kernelType = configurationParameter->createElement("Kernel");
@@ -146,8 +140,6 @@ void MDSSpaceCreatorDialog::generateSetParameters()
     Error_messages_handler temp;
 
     create_mds_object->initFromDom(*configurationParameter,&*this->proj_,&temp);
-
-//    Root::instance()->delete_interface(mds_manager + "/temp");
 
     this->updateSpaceList();
 

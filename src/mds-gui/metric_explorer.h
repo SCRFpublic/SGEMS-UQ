@@ -5,7 +5,7 @@
 #include <common.h>
 #include "MetricDataTable.h"
 
-#include <GsTLAppli/appli/project.h>
+#include <appli/project.h>
 
 #include <Qt>
 #include <QFrame>

@@ -15,8 +15,8 @@
 #include <mds_space_filters.h>
 #include <Metric_data_actions.h>
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/filters/save_project_objects.h>
+#include <appli/manager_repository.h>
+#include <filters/save_project_objects.h>
 
 
 #if defined(_WIN32) || defined(WIN32)

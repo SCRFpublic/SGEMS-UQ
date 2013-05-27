@@ -15,7 +15,7 @@ param_base_class::param_base_class(Chart_mdi_area *mdi,
     mdsObject_ = dynamic_cast<MultiDimScalingSpace*>(ni.raw_ptr());
 
     // Get complete list of properties from MDS Object
-    std::vector<GsTLGridProperty*> mdsProps = mdsObject_->getProperties();
+    std::vector<Grid_continuous_property*> mdsProps = mdsObject_->getProperties();
 
     for (unsigned int i = 0; i < mdsProps.size(); ++i)
         propertyList_.push_back(QString::fromStdString(mdsProps.at(i)->name()));
@@ -225,7 +225,7 @@ void param_base_class::traversePath(parameterNode *node, QString *currentPath)
 
 bool param_base_class::update()
 {
-
+  return true;
 }
 
 /**

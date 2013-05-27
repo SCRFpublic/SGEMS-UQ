@@ -2,10 +2,10 @@
 
 #include "metric_manager_repository.h"
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/grid/grid_model/grid_property.h>
-#include <GsTLAppli/grid/grid_model/grid_categorical_property.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <grid/grid_property.h>
+#include <grid/grid_categorical_property.h>
 
 #include <QStringList>
 
@@ -136,7 +136,7 @@ int GsTL_grid_item::row() const{
 
 GsTL_property_item::GsTL_property_item():GsTL_item(0){}
 
-GsTL_property_item::GsTL_property_item(GsTLGridProperty* prop, GsTL_item *parent)
+GsTL_property_item::GsTL_property_item(Grid_continuous_property* prop, GsTL_item *parent)
     :GsTL_item(parent),prop_(prop)
 {
     if(parent) {
@@ -184,7 +184,7 @@ int GsTL_property_item::columnCount() const{
 QVariant GsTL_property_item::data(int column) const{
     if( column == 0 ) return QString::fromStdString(prop_->name());
     if( column == 1) {
-        GsTLGridCategoricalProperty* cprop = dynamic_cast<GsTLGridCategoricalProperty*>(prop_);
+        Grid_categorical_property* cprop = dynamic_cast<Grid_categorical_property*>(prop_);
         if(cprop) return QString("Categorical");
         else return QString("Continuous");
     }

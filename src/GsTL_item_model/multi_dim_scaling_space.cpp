@@ -11,7 +11,7 @@
 #include "metric_manager_repository.h"
 
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <appli/manager_repository.h>
 
 //#include <vtkFloatArray.h>
 
@@ -55,8 +55,8 @@ bool MultiDimScalingSpace::initialize(std::string name,
         QString propName = QString::fromStdString(it->second);
         std::string propNameStr = propName.toStdString();
 
-        // Grab GsTLGridProperty from Grid
-        GsTLGridProperty* currentProperty = grid->select_property(propNameStr);
+        // Grab Grid_continuous_property from Grid
+        Grid_continuous_property* currentProperty = grid->select_property(propNameStr);
         this->propertyParameters.push_back(currentProperty->parameters());
         props_.push_back(currentProperty);
 

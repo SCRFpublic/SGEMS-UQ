@@ -6,8 +6,8 @@
 #include "MetricDataManager.h"
 #include "common.h"
 
-#include <GsTLAppli/appli/project.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
+#include <appli/project.h>
+#include <grid/geostat_grid.h>
 
 #include <QList>
 #include <QVariant>
@@ -90,7 +90,7 @@ class ITEM_MODEL_DECL GsTL_property_item : public GsTL_item
 public:
     GsTL_property_item();
 
-    GsTL_property_item(GsTLGridProperty* prop, GsTL_item *parent = 0);
+    GsTL_property_item(Grid_continuous_property* prop, GsTL_item *parent = 0);
     virtual ~GsTL_property_item();
 
 
@@ -102,7 +102,7 @@ public:
  //   virtual GsTL_item *parent();
 
 private:
-    GsTLGridProperty* prop_;
+    Grid_continuous_property* prop_;
     QString gridName_;
 };
 

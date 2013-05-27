@@ -11,8 +11,8 @@
 #include "MetricData.h"
 #include "dommodel.h"
 #include "common.h"
-#include <GsTLAppli/utils/named_interface.h>
-#include <GsTLAppli/appli/root_model.h>
+#include <utils/named_interface.h>
+#include <appli/root_model.h>
 
 #include <QtXml/QtXml>
 

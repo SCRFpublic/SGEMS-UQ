@@ -4,8 +4,8 @@
 
 #include <MetricData.h> 
 
-#include <GsTLAppli/filters/filter.h>
-#include <GsTLAppli/utils/named_interface.h> 
+#include <filters/filter.h>
+#include <utils/named_interface.h> 
 
 #include <QDomElement>
 //Save the 

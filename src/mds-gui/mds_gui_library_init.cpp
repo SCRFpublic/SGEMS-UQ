@@ -3,8 +3,8 @@
 //#include <MDS_gui_action.h>
 #include "metricmanager/eda_response.h"
 #include "eda_mds_space.h""
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/utils/gstl_messages.h>
+#include <appli/manager_repository.h>
+#include <utils/gstl_messages.h>
 
 extern "C"  METRICSGUI_DECL int plugin_init() {
   GsTLlog << "\n\n registering actions mds_action" << "\n";

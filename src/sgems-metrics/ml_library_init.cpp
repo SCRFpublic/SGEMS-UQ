@@ -1,4 +1,4 @@
-//#include <GsTLAppli/utils/gstl_plugins.h>
+//#include <utils/gstl_plugins.h>
 
 #include "mds_action.h"
 #include "kmeans_action.h"
@@ -22,7 +22,7 @@
 #include <MetricDataManager.h>
 
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <appli/manager_repository.h>
 
 
 #if defined(_WIN32) || defined(WIN32)

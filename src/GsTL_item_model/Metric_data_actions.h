@@ -5,9 +5,9 @@
 #include <MetricData.h> 
 #include <Metric_data_io_filter.h> 
 
-#include <GsTLAppli/actions/action.h>
-#include <GsTLAppli/utils/named_interface.h> 
-#include <GsTLAppli/utils/error_messages_handler.h>
+#include <actions/action.h>
+#include <utils/named_interface.h> 
+#include <utils/error_messages_handler.h>
 
 
 class MultiDimScalingSpace;

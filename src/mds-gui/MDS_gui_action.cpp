@@ -9,8 +9,8 @@
 #include "mds_gui.h"
 
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/appli/project.h>
+#include <appli/manager_repository.h>
+#include <appli/project.h>
 
 Named_interface* MDS_gui_action::create_new_interface( std::string& ){
     return new MDS_gui_action;

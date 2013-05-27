@@ -7,9 +7,9 @@
 #include <MetricDataManager.h>
 #include <metric_manager_repository.h>
 
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <grid/geostat_grid.h>
 #include <QDomDocument>
 #include <QDomElement>
 

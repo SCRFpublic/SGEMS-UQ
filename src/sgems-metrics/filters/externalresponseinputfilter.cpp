@@ -134,8 +134,8 @@ void ExternalResponseInputFilter::exec()
                     Geostat_grid* grid =
                             dynamic_cast<Geostat_grid*> (grid_ni.raw_ptr());
 
-                    // Grab GsTLGridProperty from Grid
-                    GsTLGridProperty* currentProperty =
+                    // Grab Grid_continuous_property from Grid
+                    Grid_continuous_property* currentProperty =
                             grid->select_property(propStr.toStdString());
 
                     // Generate the required metaDataXml
@@ -239,8 +239,8 @@ void ExternalResponseInputFilter::exec()
                     Geostat_grid* grid =
                             dynamic_cast<Geostat_grid*> (grid_ni.raw_ptr());
 
-                    // Grab GsTLGridProperty from Grid
-                    GsTLGridProperty* currentProperty =
+                    // Grab Grid_continuous_property from Grid
+                    Grid_continuous_property* currentProperty =
                             grid->select_property(propStr.toStdString());
 
                     // Generate the required metaDataXml

@@ -83,8 +83,7 @@ void param_plot_window::plot(QStringList &properties,
     x_axis->SetTitle("Realizations");
     x_axis->GetTitleProperties()->SetFontSize(16);
 
-    x_axis->SetTickPositions(arrId_);
-    x_axis->SetTickLabels(labels_);
+    x_axis->SetCustomTickPositions(arrId_,labels_);
     x_axis->GetLabelProperties()->SetOrientation(90);
     x_axis->GetLabelProperties()->SetFontSize(24);
 
@@ -171,10 +170,7 @@ void param_plot_window::plot(QStringList &parameters,
     x_axis->SetMaximum(parameters.size());
     x_axis->SetTitle("Parameters");
     x_axis->GetTitleProperties()->SetFontSize(16);
-    x_axis->SetTickPositions(arrId_);
-
-    // Todo: Truncate the labels
-    x_axis->SetTickLabels(labels_);
+    x_axis->SetCustomTickPositions(arrId_,labels_);
     x_axis->GetLabelProperties()->SetFontSize(16);
 
 

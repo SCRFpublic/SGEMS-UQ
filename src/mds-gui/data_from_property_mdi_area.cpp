@@ -13,8 +13,8 @@
 #include <MetricData.h>
 #include <MetricDataManager.h>
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
 
 ChartDataFromPropertyMdiArea::ChartDataFromPropertyMdiArea(QWidget* parent)
 	: QMdiArea(parent)

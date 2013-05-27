@@ -4,8 +4,8 @@
 #include <metrics_action_common.h>
 #include <MetricFilter.h>
 #include <vector>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/grid/grid_model/grid_property.h> 
+#include <grid/geostat_grid.h>
+#include <grid/grid_property.h> 
 
 using namespace std;
 
@@ -20,7 +20,7 @@ public:
 	int size(){return filters_.size();}
 	MetricFilter* getMetricFilter(int index) {return filters_[index];}
 
-//	void create_vector(Geostat_grid* input_grid, GsTLGridProperty* input_prop, vector<float>& output_vector);
+//	void create_vector(Geostat_grid* input_grid, Grid_continuous_property* input_prop, vector<float>& output_vector);
 private:
 	vector<MetricFilter*> filters_;
 };

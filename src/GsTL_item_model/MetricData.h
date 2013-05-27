@@ -11,16 +11,16 @@
 #include "GenericKernels.h"
 #include "common.h"
 
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/grid/grid_model/grid_property.h>
-#include <GsTLAppli/math/continuous_distribution.h>
-#include <GsTLAppli/math/non_parametric_distribution.h>
+#include <grid/geostat_grid.h>
+#include <grid/grid_property.h>
+#include <math/continuous_distribution.h>
+#include <math/non_parametric_distribution.h>
 
 #include <QtXml/QtXml>
 
 using namespace std;
 
-// Class that store the metrics of a GsTLGridProperty
+// Class that store the metrics of a Grid_continuous_property
 
 // Problem to be solved
 // When the data is a GsTLGridPropertyGrid we should not have to
@@ -55,7 +55,7 @@ public :
     void setKernel(Distance_kernel* distance_kernel);
 
     // TODO: make accessor function
-    const GsTLGridProperty* prop_;
+    const Grid_continuous_property* prop_;
 
 protected :
 
@@ -67,7 +67,7 @@ class ITEM_MODEL_DECL MetricData : public Named_interface {
 public :
 //    static Named_interface* create_new_interface( std::string& );
     MetricData():distance_kernel_(0){}
-    MetricData(const GsTLGridProperty* prop,QDomElement metaDataXml);
+    MetricData(const Grid_continuous_property* prop,QDomElement metaDataXml);
 
     virtual bool initialize(QDomElement serializedXml);
 
@@ -90,7 +90,7 @@ public :
     void setKernel(Distance_kernel* distance_kernel) {
         distance_kernel_ = distance_kernel; }
 
-    const GsTLGridProperty* property() const {return prop_;}
+    const Grid_continuous_property* property() const {return prop_;}
     const Geostat_grid* grid() const {return grid_;}
 
     //GsTL_object_item
@@ -106,7 +106,7 @@ public :
     }
 
     //ToDO: make accessor func
-        const GsTLGridProperty* prop_;
+        const Grid_continuous_property* prop_;
 
 protected :
 
@@ -133,7 +133,7 @@ public :
     static Named_interface* create_new_interface( std::string& );
 
     MetricScalarData(){}
-    MetricScalarData(const GsTLGridProperty* prop,
+    MetricScalarData(const Grid_continuous_property* prop,
                      QDomElement metaDataXml, float data );
 
     virtual bool initialize(QDomElement serializedXml);
@@ -154,7 +154,7 @@ public :
 
 
 private :
-    //	const GsTLGridProperty* prop_;
+    //	const Grid_continuous_property* prop_;
     //	QDomElement metaDataXml;
 
     float data_;
@@ -168,7 +168,7 @@ public :
   static Named_interface* create_new_interface( std::string& );
     
     MetricVectorData(){}
-    MetricVectorData(const GsTLGridProperty* prop,
+    MetricVectorData(const Grid_continuous_property* prop,
                      QDomElement metaDataXml, std::vector<float> data );
 
     virtual ~MetricVectorData(){}
@@ -195,7 +195,7 @@ public :
 
 
 private :
-    //	const GsTLGridProperty* prop_;
+    //	const Grid_continuous_property* prop_;
     //	QDomElement metaDataXml;
 
     std::vector<float> data_;
@@ -210,8 +210,8 @@ public :
   static Named_interface* create_new_interface( std::string& );
 
     MetricPropertyData(){}
-    MetricPropertyData(const GsTLGridProperty* prop,
-                       QDomElement metaDataXml, const GsTLGridProperty* data_prop);
+    MetricPropertyData(const Grid_continuous_property* prop,
+                       QDomElement metaDataXml, const Grid_continuous_property* data_prop);
 
     virtual ~MetricPropertyData(){}
     virtual std::string classname() const { return "MetricPropertyData"; }
@@ -219,7 +219,7 @@ public :
 
     bool initialize(QDomElement serializedXml);
 
-    const GsTLGridProperty* data() const {return data_prop_;}
+    const Grid_continuous_property* data() const {return data_prop_;}
     virtual float data(int index) const {return data_prop_->get_value(index);}
     virtual int size() const {return data_prop_->size();}
 
@@ -233,8 +233,8 @@ public :
 
 
 private :
-    const GsTLGridProperty* data_prop_;
-    //	const GsTLGridProperty* prop_;
+    const Grid_continuous_property* data_prop_;
+    //	const Grid_continuous_property* prop_;
     //	QDomElement metaDataXml;
 
 };
@@ -245,7 +245,7 @@ public :
   static Named_interface* create_new_interface( std::string& );
 
     MetricTimeSeriesData(){}
-    MetricTimeSeriesData(const GsTLGridProperty* prop,
+    MetricTimeSeriesData(const Grid_continuous_property* prop,
                      QDomElement metaDataXml, std::vector<float> data,
                      std::vector<float> time);
 
@@ -274,7 +274,7 @@ public :
 
 
 private :
-    //	const GsTLGridProperty* prop_;
+    //	const Grid_continuous_property* prop_;
     //	QDomElement metaDataXml;
 
     std::vector<float> data_;
@@ -289,7 +289,7 @@ public :
   static Named_interface* create_new_interface( std::string& );
 
     MetricContinuousDistributionData();
-    MetricContinuousDistributionData(const GsTLGridProperty* prop,
+    MetricContinuousDistributionData(const Grid_continuous_property* prop,
                      QDomElement metaDataXml, Continuous_distribution* dist);
 
     virtual ~MetricContinuousDistributionData(){ delete dist_;}

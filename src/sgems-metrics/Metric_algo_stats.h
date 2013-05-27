@@ -10,9 +10,9 @@
 
 #include <metrics_action_common.h>
 #include <Metric_algo.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/grid/grid_model/grid_property.h>
-#include <GsTLAppli/grid/grid_model/grid_region.h>
+#include <grid/geostat_grid.h>
+#include <grid/grid_property.h>
+#include <grid/grid_region.h>
 
 class METRICSACTIONS_DECL Metric_algo_stats : public Metric_algo {
 public:
@@ -35,8 +35,8 @@ public:
 protected :
   Geostat_grid* grid_;
   std::string grid_name_;
-  std::vector<GsTLGridProperty*> props_;
-  GsTLGridRegion* region_;
+  std::vector<Grid_continuous_property*> props_;
+  Grid_region* region_;
 
 };
 

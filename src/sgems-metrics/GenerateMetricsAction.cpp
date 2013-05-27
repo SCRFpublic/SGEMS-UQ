@@ -9,17 +9,17 @@
 
 #include <metric_manager_repository.h>
 
-#include <GsTLAppli/actions/defines.h>
-#include <GsTLAppli/utils/gstl_messages.h>
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/utils/error_messages_handler.h>
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/appli/project.h>
+#include <actions/defines.h>
+#include <utils/gstl_messages.h>
+#include <utils/string_manipulation.h>
+#include <utils/error_messages_handler.h>
+#include <utils/string_manipulation.h>
+#include <grid/geostat_grid.h>
+#include <appli/manager_repository.h>
+#include <appli/project.h>
 #include <GsTL/utils/smartptr.h>
 
-#include <GsTLAppli/geostat/utilities.h>
+#include <geostat/utilities.h>
 #include <iostream>
 #include <sstream>
 
@@ -119,7 +119,7 @@ bool GenerateMetricsAction::init(std::string& parameters, GsTL_project* proj,
 
     // verify and save list of input props
     for (int i = 2; i < num_inputs_ + 2; i++) {
-        GsTLGridProperty* prop = grid_->select_property( params[i] );
+        Grid_continuous_property* prop = grid_->select_property( params[i] );
 
         if (!prop) {
             errors->report("Invalid grid property " + params[i] );

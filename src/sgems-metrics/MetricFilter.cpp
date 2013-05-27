@@ -3,7 +3,7 @@
 #include "MetricFilterPackage.h"
 #include "ml_library_constants.h"
 
-#include <GsTLAppli/appli/manager_repository.h>
+#include <appli/manager_repository.h>
 
 MetricFilter::MetricFilter(void)
 {
@@ -86,6 +86,6 @@ bool MetricFilter::initialize(const QDomElement& root) {
 	return true;
 }
 
-MetricData* MetricFilter::computeMetricData(Geostat_grid* input_grid, GsTLGridProperty* input_prop) {
+MetricData* MetricFilter::computeMetricData(Geostat_grid* input_grid, Grid_continuous_property* input_prop) {
 	return 0;
 }

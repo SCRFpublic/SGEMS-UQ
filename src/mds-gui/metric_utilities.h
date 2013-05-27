@@ -4,7 +4,7 @@
 #define _METRICDATA_UTILITIES_H
 
 #include <QModelIndex>
-#include <GsTLAppli/extra/qtplugins/project_proxy_model.h>
+#include <qtplugins/project_proxy_model.h>
 #include "common.h"
 #include <QString>
 

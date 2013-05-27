@@ -5,10 +5,10 @@
  *      Author: aboucher
  */
 
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/filters/distribution_filter.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <grid/geostat_grid.h>
+#include <filters/distribution_filter.h>
 
 #include "MetricData.h"
 #include <cmath>
@@ -16,7 +16,7 @@
 #include <QDomAttr>
 
 
-MetricData::MetricData(const GsTLGridProperty* prop,QDomElement metaDataXml)
+MetricData::MetricData(const Grid_continuous_property* prop,QDomElement metaDataXml)
     :distance_kernel_(0),prop_(prop),grid_(0), metaDataXml_(metaDataXml)
 {
 
@@ -277,8 +277,8 @@ float MetricPropertyData::distance(const MetricData* metric) const{
     if( pmetric == 0 ) return -1;
     if (!distance_kernel_) return -1.0f;
 
-    GsTLGridProperty::const_iterator it1 = data_prop_->begin();
-    GsTLGridProperty::const_iterator it2 = pmetric->data()->begin();
+    Grid_continuous_property::const_iterator it1 = data_prop_->begin();
+    Grid_continuous_property::const_iterator it2 = pmetric->data()->begin();
     float e2 = 0.0;
     for( ; it1 != data_prop_->end(); ++it1, ++it2) {
         e2 += (*distance_kernel_)(*it1, *it2);
@@ -286,7 +286,7 @@ float MetricPropertyData::distance(const MetricData* metric) const{
     return e2/data_prop_->size();
 }
 
-MetricScalarData::MetricScalarData(const GsTLGridProperty* prop,
+MetricScalarData::MetricScalarData(const Grid_continuous_property* prop,
                                    QDomElement metaDataXml, float data )
     : MetricData(prop,metaDataXml), data_(data) {
     // serialize data
@@ -330,7 +330,7 @@ bool MetricScalarData::initialize(QDomElement serializedXml){
 }
 
 
-MetricVectorData::MetricVectorData(const GsTLGridProperty* prop,
+MetricVectorData::MetricVectorData(const Grid_continuous_property* prop,
                                    QDomElement metaDataXml,
                                    std::vector<float> data )
     : MetricData(prop,metaDataXml), data_(data)
@@ -389,7 +389,7 @@ bool MetricVectorData::initialize(QDomElement serializedXml){
 }
 
 
-MetricTimeSeriesData::MetricTimeSeriesData(const GsTLGridProperty *prop,
+MetricTimeSeriesData::MetricTimeSeriesData(const Grid_continuous_property *prop,
                                            QDomElement metaDataXml,
                                            std::vector<float> data,
                                            std::vector<float> time) :
@@ -466,9 +466,9 @@ bool MetricTimeSeriesData::initialize(QDomElement serializedXml){
 
 
 
-MetricPropertyData::MetricPropertyData(const GsTLGridProperty* prop,
+MetricPropertyData::MetricPropertyData(const Grid_continuous_property* prop,
                                        QDomElement metaDataXml,
-                                       const GsTLGridProperty* data_prop)
+                                       const Grid_continuous_property* data_prop)
     : MetricData(prop,metaDataXml), data_prop_(data_prop){
     // serialize data
     /*
@@ -513,7 +513,7 @@ Named_interface* MetricContinuousDistributionData::create_new_interface( std::st
 
 MetricContinuousDistributionData::MetricContinuousDistributionData():dist_(0){}
 
-MetricContinuousDistributionData::MetricContinuousDistributionData(const GsTLGridProperty* prop,
+MetricContinuousDistributionData::MetricContinuousDistributionData(const Grid_continuous_property* prop,
                      QDomElement metaDataXml, Continuous_distribution* dist){
 
   serializedDataXml_.clear();

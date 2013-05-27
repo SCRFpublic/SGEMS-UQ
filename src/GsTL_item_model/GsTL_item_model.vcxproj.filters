@@ -25,62 +25,50 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="domattributeitem.cpp">
+    <ClCompile Include="Debug\moc_metricdommodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="domitem.cpp">
+    <ClCompile Include="Release\moc_metricdommodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dommodel.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GeneratedFiles\Debug\moc_parameterdommodel.cpp">
+      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="library_metric_init.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GeneratedFiles\Release\moc_parameterdommodel.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="MdsSpaceObjectModel.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GeneratedFiles\Debug\moc_metricdommodel.cpp">
+      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="MetricData.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GeneratedFiles\Release\moc_metricdommodel.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="MetricDataManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MdsSpaceObjectModel.cpp">
+      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="metricdommodel.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_MdsSpaceObjectModel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_dommodel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_dommodel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="parameterdommodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="multi_dim_scaling_space.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="parameterdommodel.cpp">
+    <ClCompile Include="metricdommodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_dommodel.cpp">
-      <Filter>Generated Files\Debug</Filter>
+    <ClCompile Include="MetricDataManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_MdsSpaceObjectModel.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_metricdommodel.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_parameterdommodel.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_dommodel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_MdsSpaceObjectModel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_metricdommodel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_parameterdommodel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="$(Configuration)\moc_dommodel.cpp">
-      <Filter>Generated Files</Filter>
+    <ClCompile Include="MetricData.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Metric_data_io_filter.cpp">
       <Filter>Source Files</Filter>
@@ -88,7 +76,25 @@
     <ClCompile Include="Metric_data_actions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MdsSpaceObjectModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="mds_space_filters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="library_metric_init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gstl_item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dommodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="domitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="domattributeitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,13 +102,16 @@
     <ClInclude Include="common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="kmeans.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="multi_dim_scaling_space.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mdsutil.h">
+    <ClInclude Include="MetricDataManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MetricData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="metric_manager_repository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Metric_data_io_filter.h">
@@ -111,39 +120,42 @@
     <ClInclude Include="Metric_data_actions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="mdsutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="mds_space_filters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kmeans.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gstl_item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericKernels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="domitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="domattributeitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="domattributeitem.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="domitem.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="dommodel.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GenericKernels.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="MdsSpaceObjectModel.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="metric_manager_repository.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="MetricData.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="MetricDataManager.h">
+    <CustomBuild Include="parameterdommodel.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="metricdommodel.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="parameterdommodel.h">
+    <CustomBuild Include="MdsSpaceObjectModel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dommodel.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>

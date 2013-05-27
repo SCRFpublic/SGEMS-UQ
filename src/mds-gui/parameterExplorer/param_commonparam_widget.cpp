@@ -25,7 +25,7 @@ param_commonParam_widget::~param_commonParam_widget()
 
 bool param_commonParam_widget::update()
 {
-
+  return true;
 }
 
 void param_commonParam_widget::search()

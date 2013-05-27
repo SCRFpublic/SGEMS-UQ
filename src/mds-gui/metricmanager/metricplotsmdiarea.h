@@ -6,16 +6,16 @@
 #include <QDragEnterEvent>
 #include <QDropEvent>
 
-#include <GsTLAppli/extra/qtplugins/project_proxy_model.h>
-#include <GsTLAppli/extra/qtplugins/property_proxy_model.h>
+#include <qtplugins/project_proxy_model.h>
+#include <qtplugins/property_proxy_model.h>
 
 
 #include <metric_manager_repository.h>
 #include <MetricData.h>
 #include <MetricDataManager.h>
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
 #include <metricmanager/mdsmetricplotsubwindow.h>
 
 

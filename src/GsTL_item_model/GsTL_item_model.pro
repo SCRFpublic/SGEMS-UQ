@@ -15,15 +15,15 @@ INCLUDEPATH += /home/lewisli/code-dev/SGEMS-UQ/src/sgems-metrics
 LIBS += -L/home/lewisli/code-dev/ar2tech-SGeMS-public/lib/linux \
     -L/home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/designer \
     -L/home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/Geostat \
-    -lGsTLAppli_actions \
-    -lGsTLAppli_appli \
-    -lGsTLAppli_extragui \
-    -lGsTLAppli_filters \
-    -lGsTLAppli_geostat \
-    -lGsTLAppli_grid \
-    -lGsTLAppli_math \
-    -lGsTLAppli_utils \
-    -lGsTLwidgets
+    -lar2gems_actions \
+    -lar2gems_appli \
+    -lar2gems_extragui \
+    -lar2gems_io \
+    -lar2gems_geostat \
+    -lar2gems_grid \
+    -lar2gems_math \
+    -lar2gems_utils \
+    -lar2gems_widgets
 SOURCES += MdsSpaceObjectModel.cpp \
     multi_dim_scaling_space.cpp \
     domattributeitem.cpp \

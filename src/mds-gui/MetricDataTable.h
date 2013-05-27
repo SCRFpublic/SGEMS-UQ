@@ -12,7 +12,7 @@
 #include <Qt>
 #include <QTableView>
 #include <QStandardItemModel>
-#include <GsTLAppli/appli/project.h>
+#include <appli/project.h>
 
 class METRICSGUI_DECL MetricDataTable : public QWidget
 {

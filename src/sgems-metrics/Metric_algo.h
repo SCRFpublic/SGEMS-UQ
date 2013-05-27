@@ -9,9 +9,9 @@
 #define METRIC_ALGO_H_
 
 #include <metrics_action_common.h>
-#include <GsTLAppli/geostat/geostat_algo.h>
-#include <GsTLAppli/geostat/common.h>
-#include <GsTLAppli/utils/named_interface.h>
+#include <geostat/geostat_algo.h>
+#include <geostat/common.h>
+#include <utils/named_interface.h>
 
 #include <QtXml/QtXml>
 

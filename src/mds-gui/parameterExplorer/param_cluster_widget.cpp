@@ -107,6 +107,6 @@ createParameterPlotWindow();
 
 bool param_cluster_widget::update()
 {
-
+  return true;
 }
 

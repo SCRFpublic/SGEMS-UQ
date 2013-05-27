@@ -1,11 +1,11 @@
 #include "MetricFilterPackage.h"
-#include <GsTLAppli/grid/grid_model/gval_iterator.h>
+#include <grid/gval_iterator.h>
 
 // preset filter packages
 
 // return mean
 /*
-void filter_mean::create_vector(Geostat_grid* input_grid, GsTLGridProperty* input_prop, vector<float>& output_vector) {
+void filter_mean::create_vector(Geostat_grid* input_grid, Grid_continuous_property* input_prop, vector<float>& output_vector) {
  Geostat_grid::iterator it = input_grid->begin();
 
  float sum = 0.0f;
@@ -25,12 +25,12 @@ void filter_mean::create_vector(Geostat_grid* input_grid, GsTLGridProperty* inpu
 */
 
 MetricData* MetricFilterMean::computeMetricData(Geostat_grid* input_grid,
-                                                GsTLGridProperty* input_prop)
+                                                Grid_continuous_property* input_prop)
 {
     float sum = 0.0f;
     int n = 0;
 
-    GsTLGridProperty::iterator it = input_prop->begin();
+    Grid_continuous_property::iterator it = input_prop->begin();
 
     for ( ; it != input_prop->end(); ++it) {
         sum += *it;
@@ -42,14 +42,14 @@ MetricData* MetricFilterMean::computeMetricData(Geostat_grid* input_grid,
 
 
 MetricData* MetricFilterVariance::computeMetricData(Geostat_grid* input_grid,
-                                                    GsTLGridProperty* input_prop)
+                                                    Grid_continuous_property* input_prop)
 {
 
     float sum = 0.0f;
     float sum2 = 0.0f; // sum of each element squared
     int n = 0;
 
-    GsTLGridProperty::iterator it = input_prop->begin();
+    Grid_continuous_property::iterator it = input_prop->begin();
 
     for ( ; it != input_prop->end(); ++it)
     {
@@ -68,7 +68,7 @@ MetricData* MetricFilterVariance::computeMetricData(Geostat_grid* input_grid,
 
 // return vector of values
 MetricData* MetricFilterValues::computeMetricData(Geostat_grid* input_grid,
-                                                  GsTLGridProperty* input_prop)
+                                                  Grid_continuous_property* input_prop)
 {
 
     return new MetricPropertyData(input_prop,paramXml_, input_prop);

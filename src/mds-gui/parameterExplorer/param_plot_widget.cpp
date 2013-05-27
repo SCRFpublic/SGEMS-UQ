@@ -41,4 +41,5 @@ void param_plot_widget::plotParameterValues()
 }
 bool param_plot_widget::update()
 {
+  return true;
 }

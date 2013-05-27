@@ -9,9 +9,9 @@
 #define MDS_GUI_ACTION_H_
 
 #include <common.h>
-#include <GsTLAppli/utils/gstl_plugins.h>
-#include <GsTLAppli/actions/common.h>
-#include <GsTLAppli/actions/action.h>
+#include <utils/gstl_plugins.h>
+#include <actions/common.h>
+#include <actions/action.h>
 
 
 class GsTL_project;

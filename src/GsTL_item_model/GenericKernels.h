@@ -11,7 +11,7 @@ alexchia@stanford.edu
 #include <vector>
 #include <string>
 #include <math.h>
-#include <GsTLAppli/utils/named_interface.h>
+#include <utils/named_interface.h>
 
 
 // generic kernel class

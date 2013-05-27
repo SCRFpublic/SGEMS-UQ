@@ -10,19 +10,19 @@
 
 #include <metrics_action_common.h>
 #include <iostream>
-#include <GsTLAppli/utils/named_interface.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/grid/grid_model/grid_property.h>
+#include <utils/named_interface.h>
+#include <grid/geostat_grid.h>
+#include <grid/grid_property.h>
 
-#include <GsTLAppli/actions/defines.h>
-#include <GsTLAppli/utils/gstl_messages.h>
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/utils/error_messages_handler.h>
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/grid/grid_model/point_set.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/appli/project.h>
+#include <actions/defines.h>
+#include <utils/gstl_messages.h>
+#include <utils/string_manipulation.h>
+#include <utils/error_messages_handler.h>
+#include <utils/string_manipulation.h>
+#include <grid/geostat_grid.h>
+#include <grid/point_set.h>
+#include <appli/manager_repository.h>
+#include <appli/project.h>
 #include <GsTL/utils/smartptr.h>
 
 #include <ml_library_constants.h>

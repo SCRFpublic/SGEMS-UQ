@@ -10,9 +10,9 @@
 
 #include <metrics_action_common.h>
 #include <Metric_algo.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
-#include <GsTLAppli/grid/grid_model/grid_property.h>
-#include <GsTLAppli/grid/grid_model/grid_region.h>
+#include <grid/geostat_grid.h>
+#include <grid/grid_property.h>
+#include <grid/grid_region.h>
 
 //#include "../Geobody/geobody_action.h"
 
@@ -43,11 +43,11 @@ private :
 
   std::string metric_base_name_;
 
-  GsTLGridRegion* region_;
+  Grid_region* region_;
   Geostat_grid* grid_;
 
-  std::vector<const GsTLGridProperty*> gbody_props_;
-  std::vector<GsTLGridProperty*> props_;
+  std::vector<const Grid_continuous_property*> gbody_props_;
+  std::vector<Grid_continuous_property*> props_;
 
 //  Geobody_action gbody_algo_;
 

@@ -6,8 +6,8 @@
  */
 
 #include "MetricDataManager.h"
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/utils/manager.h>
+#include <utils/string_manipulation.h>
+#include <utils/manager.h>
 
 MetricDataToProperties::MetricDataToProperties(std::string name,
                                                std::string type,

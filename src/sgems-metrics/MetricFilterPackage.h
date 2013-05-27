@@ -13,7 +13,7 @@ public:
 
 	MetricFilterMean(void) {}
 	virtual ~MetricFilterMean(void) {}
-	virtual MetricData* computeMetricData(Geostat_grid* input_grid, GsTLGridProperty* input_prop);
+	virtual MetricData* computeMetricData(Geostat_grid* input_grid, Grid_continuous_property* input_prop);
 
 
 	virtual std::string classname() const { return "MetricFilterMean"; }
@@ -26,7 +26,7 @@ class MetricFilterVariance :
 public:
 	MetricFilterVariance(void) {}
 	virtual ~MetricFilterVariance(void) {}
-	virtual MetricData* computeMetricData(Geostat_grid* input_grid, GsTLGridProperty* input_prop);
+	virtual MetricData* computeMetricData(Geostat_grid* input_grid, Grid_continuous_property* input_prop);
 
 
 	virtual std::string classname() const { return "MetricFilterVariance"; }
@@ -39,7 +39,7 @@ class MetricFilterValues :
 public:
 	MetricFilterValues(void) {}
 	virtual ~MetricFilterValues(void) {}
-	virtual MetricData* computeMetricData(Geostat_grid* input_grid, GsTLGridProperty* input_prop);
+	virtual MetricData* computeMetricData(Geostat_grid* input_grid, Grid_continuous_property* input_prop);
 
 	virtual std::string classname() const { return "MetricFilterValues"; }
 	static std::string filtername() { return "PixelWiseValues"; }

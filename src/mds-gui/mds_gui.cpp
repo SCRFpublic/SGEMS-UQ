@@ -1,7 +1,6 @@
 #include "mds_gui.h"
 #include "metric_explorer.h"
 #include "data_analyst_from_metric.h"
-#include "mds_space_analyst.h"
 #include "mdsspaceanalystframe.h"
 #include "metricmanager/mdsmetricmanagerframe.h"
 
@@ -11,9 +10,9 @@
 #include <dommodel.h>
 #include <metricdommodel.h>
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/appli/project.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <appli/project.h>
 
 #include <QToolBar>
 #include <QStackedWidget>

@@ -112,5 +112,5 @@ QStringList param_commonModels_widget::findCommonModels(QString &model,
 
 bool param_commonModels_widget::update()
 {
-
+  return true;
 }

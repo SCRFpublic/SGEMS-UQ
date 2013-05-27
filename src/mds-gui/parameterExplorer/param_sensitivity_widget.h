@@ -3,8 +3,8 @@
 
 #include "mdsparametertablemodel.h"
 #include "param_base_class.h"
-#include "eigen3/Eigen/Dense"
-#include <eigen3/Eigen/SVD>
+#include <Eigen/Dense>
+#include <Eigen/SVD>
 #include <metric_utilities.h>
 
 using namespace Eigen;

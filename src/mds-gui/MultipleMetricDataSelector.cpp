@@ -12,8 +12,8 @@
 #include <metric_manager_repository.h>
 
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
 
 #include <QAbstractItemView>
 #include <QListWidgetItem>

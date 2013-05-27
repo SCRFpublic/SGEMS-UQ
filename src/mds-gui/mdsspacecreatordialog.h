@@ -2,15 +2,15 @@
 #define MDSSPACECREATORDIALOG_H
 
 #include <common.h>
-#include <GsTLAppli/appli/project.h>
+#include <appli/project.h>
 
 #include <MultipleMetricDataSelector.h>
 #include <MetricDistanceChooser.h>
-#include <GsTLAppli/appli/project.h>
-#include <GsTLAppli/extra/qtplugins/selectors.h>
+#include <appli/project.h>
+#include <qtplugins/selectors.h>
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
 #include "metric_manager_repository.h"
 
 #include <QDialog>
@@ -18,7 +18,7 @@
 #include <QTextEdit>
 #include "mds_action.h"
 
-#include <GsTLAppli/utils/error_messages_handler.h>
+#include <utils/error_messages_handler.h>
 
 #include <iostream>
 

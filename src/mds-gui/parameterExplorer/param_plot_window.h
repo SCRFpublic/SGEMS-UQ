@@ -23,7 +23,7 @@
 #include <vtkFloatArray.h>
 #include <vtkIntArray.h>
 
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 #include <vector>
 
 using namespace Eigen;

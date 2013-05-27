@@ -2,13 +2,13 @@
 #define EDA_MDS_SPACE_H
 
 #include <QObject>
-#include <GsTLAppli/charts/chart_creator.h>
-#include <GsTLAppli/charts/chart_base.h>
-#include <GsTLAppli/charts/chart_mdi_area.h>
+#include <charts/chart_creator.h>
+#include <charts/chart_base.h>
+#include <charts/chart_mdi_area.h>
 
 #include <common.h>
 #include <QFrame>
-#include <GsTLAppli/appli/project.h>
+#include <appli/project.h>
 #include <QListView>
 #include <QStringListModel>
 
@@ -19,12 +19,12 @@
 #include <GsTL/utils/smartptr.h>
 
 // GsTLAppli Dependencies
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/appli/root_model.h>
-#include <GsTLAppli/appli/project.h>
-#include <GsTLAppli/extra/qtplugins/project_proxy_model.h>
-#include <GsTLAppli/extra/qtplugins/property_proxy_model.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <appli/root_model.h>
+#include <appli/project.h>
+#include <qtplugins/project_proxy_model.h>
+#include <qtplugins/property_proxy_model.h>
 
 
 #include <mdsspacecreatordialog.h>

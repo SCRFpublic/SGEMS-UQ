@@ -34,13 +34,14 @@ public slots:
 	void addChart(QString mdsObjectName);
   void showParameters(QString mdsObjectName,QString mdsPropName){}
 
+  /*
         void showParametersChart(QString mdsObjectName);
 
         void addParameterSubViewer(std::vector<parameterPlotSubWindow*>
                                    subWindows);
 
         void addSharedParamSubViewer(sharedParameterSubwindow* subWindow);
-
+        */
 protected:
         // Use a hash table to store the MDSUncertainitySubWindow and
         // associated QMdiSubWindow that is displaying it

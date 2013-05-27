@@ -193,6 +193,8 @@ bool param_search_widget::update()
     ui->tableViewResults->setModel(model);
     ui->tableViewResults->horizontalHeader()->setStretchLastSection(true);
 
+    return true;
+
 }
 
 void param_search_widget::plot()

@@ -107,7 +107,7 @@ void param_sensitivity_widget::addSelectedParameter()
 
 bool param_sensitivity_widget::update()
 {
-
+  return true;
 }
 
 void param_sensitivity_widget::plot()

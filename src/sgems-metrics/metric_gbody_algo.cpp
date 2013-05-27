@@ -6,14 +6,14 @@
 #include <MetricDataManager.h>
 #include <metric_manager_repository.h>
 
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/appli/project.h>
-#include <GsTLAppli/utils/error_messages_handler.h>
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/grid/grid_model/grid_region_temp_selector.h>
-#include <GsTLAppli/geostat/utilities.h>
-#include <GsTLAppli/geostat/parameters_handler_impl.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <appli/project.h>
+#include <utils/error_messages_handler.h>
+#include <utils/string_manipulation.h>
+#include <grid/grid_region_temp_selector.h>
+#include <geostat/utilities.h>
+#include <geostat/parameters_handler_impl.h>
 
 
 #include <algorithm>
@@ -59,7 +59,7 @@ bool Metric_gbody_algo::initialize( const Parameters_handler* parameters,
 
 	for(std::vector< std::string >::iterator it_str = prop_name.begin();
     it_str != prop_name.end(); it_str++ ) {
-      GsTLGridProperty* prop = grid_->property( *it_str );
+      Grid_continuous_property* prop = grid_->property( *it_str );
       errors->report(!prop, "PropertyNames","No property exist with that name");
       props_.push_back(prop);
   }   
@@ -75,7 +75,7 @@ bool Metric_gbody_algo::initialize( const Parameters_handler* parameters,
 
 	for(std::vector< std::string >::iterator it_str = gbody_prop_name.begin();
     it_str != gbody_prop_name.end(); it_str++ ) {
-      GsTLGridProperty* prop = grid_->property( *it_str );
+      Grid_continuous_property* prop = grid_->property( *it_str );
       errors->report(!prop, "GeobodyPropertyNames","No property exist with that name");
       gbody_props_.push_back(prop);
   } 
@@ -89,8 +89,8 @@ bool Metric_gbody_algo::initialize( const Parameters_handler* parameters,
 
 int Metric_gbody_algo::execute( GsTL_project* proj ){
 
-  std::vector<const GsTLGridProperty*>::const_iterator it_gbody  = gbody_props_.begin();
-  std::vector<GsTLGridProperty*>::iterator it_prop  = props_.begin();
+  std::vector<const Grid_continuous_property*>::const_iterator it_gbody  = gbody_props_.begin();
+  std::vector<Grid_continuous_property*>::iterator it_prop  = props_.begin();
 
   for( ; it_prop!=props_.end(); ++it_prop, it_gbody++) {
 
@@ -98,7 +98,7 @@ int Metric_gbody_algo::execute( GsTL_project* proj ){
     //Get the size distribution of geobody
     // Get statistic from geobody
 
-    GsTLGridProperty::const_iterator it = (*it_gbody)->begin();
+    Grid_continuous_property::const_iterator it = (*it_gbody)->begin();
     int ngbody = -99;
     for( ; it != (*it_gbody)->end(); ++it) {
       if(  *it > ngbody ) ngbody = *it;

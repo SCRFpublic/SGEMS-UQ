@@ -2,8 +2,8 @@
 #define CHART_MDS_H
 
 #include <QObject>
-#include <GsTLAppli/charts/chart_base.h>
-#include <GsTLAppli/charts/chart_mdi_area.h>
+#include <charts/chart_base.h>
+#include <charts/chart_mdi_area.h>
 #include <common.h>
 #include <QWidget>
 
@@ -34,8 +34,8 @@
 #include <MetricData.h>
 #include <MetricDataManager.h>
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
 
 #include <vtkPoints.h>
 #include <vtkCellArray.h>

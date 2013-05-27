@@ -142,8 +142,7 @@ bool MDSMetricPlotSubWindow::initialize(int plotType,
         x_axis->SetMaximum(numMetrics);
         x_axis->SetTitle("Realizations");
 
-        x_axis->SetTickPositions(arrId_);
-        x_axis->SetTickLabels(labels_);
+        x_axis->SetCustomTickPositions(arrId_, labels_);
         x_axis->GetLabelProperties()->SetVerticalJustification(VTK_TEXT_CENTERED);
         x_axis->GetLabelProperties()->SetJustification(VTK_TEXT_CENTERED);
         x_axis->GetLabelProperties()->SetOrientation(90);

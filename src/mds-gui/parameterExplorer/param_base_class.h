@@ -9,9 +9,9 @@
 #include <MetricData.h>
 #include <MetricDataManager.h>
 #include <GsTL/utils/smartptr.h>
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/charts/chart_mdi_area.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <charts/chart_mdi_area.h>
 
 // Qt Specific Headers
 #include <QWidget>
@@ -78,7 +78,7 @@ protected:
     QHash<QString, geoStatParam> parameterList_;
 
     // ************************ Plotting Objects ******************************/
-    QStringList plotParameters_, ;
+    QStringList plotParameters_;
     std::vector<float> plotValues_;
 
     // ************************** SQL Functions *******************************/

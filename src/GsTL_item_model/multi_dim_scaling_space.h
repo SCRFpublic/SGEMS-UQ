@@ -16,17 +16,17 @@
 #include "MetricData.h"
 #include "MetricDataManager.h"
 #include "common.h"
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 
-#include <GsTLAppli/utils/named_interface.h>
-#include <GsTLAppli/math/gstlpoint.h>
+#include <utils/named_interface.h>
+#include <math/gstlpoint.h>
 
 #include <QtXml/QtXml>
 #include <QtXml/QDomDocument>
 #include <mdsutil.h>
 
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/grid/grid_model/geostat_grid.h>
+#include <appli/manager_repository.h>
+#include <grid/geostat_grid.h>
 
 
 #include <QDebug>
@@ -87,11 +87,11 @@ public:
     std::string getPropertyName(int index)  const{return properties_[index].second;}
     std::string getGridName(int index)  const{return properties_[index].first;}
 
-    GsTLGridProperty* getProperty( int index ) {return props_[index];}
-    const GsTLGridProperty* getProperty( int index ) const {return props_[index];}
+    Grid_continuous_property* getProperty( int index ) {return props_[index];}
+    const Grid_continuous_property* getProperty( int index ) const {return props_[index];}
 
-    std::vector<GsTLGridProperty*> getProperties() {return props_;}
-    const std::vector<GsTLGridProperty*> getProperties(  ) const {return props_;}
+    std::vector<Grid_continuous_property*> getProperties() {return props_;}
+    const std::vector<Grid_continuous_property*> getProperties(  ) const {return props_;}
 
     void kmeans(unsigned int k);
 
@@ -151,7 +151,7 @@ protected :
     std::string name_;
     QDomDocument doc_;
     std::vector< grid_prop_pairT > properties_;
-    std::vector<GsTLGridProperty*> props_;
+    std::vector<Grid_continuous_property*> props_;
 
     std::vector<std::string> metricNames_;
     std::map<unsigned int, Cluster> clusters_;
@@ -193,14 +193,14 @@ protected :
 class Metric_space_property_item : public GsTL_object_item {
 public :
     Metric_space_property_item();
-    Metric_space_property_item(GsTLGridProperty* prop, MetricDataCollection* metric_collection, GsTL_object_item* parent)
+    Metric_space_property_item(Grid_continuous_property* prop, MetricDataCollection* metric_collection, GsTL_object_item* parent)
         : GsTL_object_item(parent), prop_(prop){}
     virtual  ~Metric_space_property_item(){}
 
     virtual void* data_pointer(){return static_cast<void*>(prop_);}
 
-    GsTLGridProperty* property(){return prop_;}
-    void property(GsTLGridProperty* prop){prop_ = prop;}
+    Grid_continuous_property* property(){return prop_;}
+    void property(Grid_continuous_property* prop){prop_ = prop;}
 
     // GsTL_object_item
     virtual QString item_type() const {return prop_->item_type();}
@@ -213,7 +213,7 @@ public :
     }
 
 private :
-    GsTLGridProperty* prop_;
+    Grid_continuous_property* prop_;
     MetricDataCollection* metrics_;
 };
 
@@ -221,7 +221,7 @@ private :
 class Metric_space_response_item : public GsTL_object_item {
 public :
     Metric_space_response_item();
-    Metric_space_response_item(std::string metric_name, std::vector<GsTLGridProperty*> props, GsTL_object_item* parent)
+    Metric_space_response_item(std::string metric_name, std::vector<Grid_continuous_property*> props, GsTL_object_item* parent)
         : GsTL_object_item(parent),metric_name_(metric_name.c_str()), props_(props){}
 
 
@@ -242,7 +242,7 @@ public :
 private :
     QString metric_name_;
     //MetricData* metric_;
-    std::vector<GsTLGridProperty*> props_;
+    std::vector<Grid_continuous_property*> props_;
 };
 
 class ITEM_MODEL_DECL Metric_space_properties : public GsTL_object_item {

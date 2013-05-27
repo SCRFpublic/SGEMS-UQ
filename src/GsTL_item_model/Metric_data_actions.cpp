@@ -6,9 +6,9 @@
 #include <MetricDataManager.h>
 #include <multi_dim_scaling_space.h>
 
-#include <GsTLAppli/actions/defines.h>
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/appli/manager_repository.h>
+#include <actions/defines.h>
+#include <utils/string_manipulation.h>
+#include <appli/manager_repository.h>
 
 
 Named_interface* Load_data_metric_action::create_new_interface(std::string&){

@@ -4,7 +4,7 @@
 
 #include "parametertreeview.h"
 
-#include <GsTLAppli/gui/appli/qt_algo_control_panel.h>
+#include <gui/appli/qt_algo_control_panel.h>
 
 #include <Qt>
 #include <QSplitter>

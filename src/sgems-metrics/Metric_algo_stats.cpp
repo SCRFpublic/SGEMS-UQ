@@ -12,14 +12,14 @@
 #include <MetricDataManager.h>
 #include <metric_manager_repository.h>
 
-#include <GsTLAppli/utils/manager.h>
-#include <GsTLAppli/appli/manager_repository.h>
-#include <GsTLAppli/appli/project.h>
-#include <GsTLAppli/utils/error_messages_handler.h>
-#include <GsTLAppli/utils/string_manipulation.h>
-#include <GsTLAppli/grid/grid_model/grid_region_temp_selector.h>
-#include <GsTLAppli/geostat/utilities.h>
-#include <GsTLAppli/geostat/parameters_handler_impl.h>
+#include <utils/manager.h>
+#include <appli/manager_repository.h>
+#include <appli/project.h>
+#include <utils/error_messages_handler.h>
+#include <utils/string_manipulation.h>
+#include <grid/grid_region_temp_selector.h>
+#include <geostat/utilities.h>
+#include <geostat/parameters_handler_impl.h>
 
 
 
@@ -52,7 +52,7 @@ bool Metric_algo_stats::initialize( const Parameters_handler* parameters,
 
 	for(std::vector< std::string >::iterator it_str = prop_name.begin();
     it_str != prop_name.end(); it_str++ ) {
-      GsTLGridProperty* prop = grid_->property( *it_str );
+      Grid_continuous_property* prop = grid_->property( *it_str );
       errors->report(!prop, "PropertyNames","No property exist with that name");
       props_.push_back(prop);
   }
@@ -83,7 +83,7 @@ int Metric_algo_mean::execute( GsTL_project* proj ){
 		float sum = 0.0f;
 		int n = 0;
 
-		GsTLGridProperty::iterator it = props_[i]->begin();
+		Grid_continuous_property::iterator it = props_[i]->begin();
 
 		for ( ; it != props_[i]->end(); ++it) {
 			sum += *it;
@@ -114,7 +114,7 @@ int Metric_algo_variance::execute( GsTL_project* proj ){
 		float sum2 = 0.0f;
 		int n = 0;
 
-		GsTLGridProperty::iterator it = props_[i]->begin();
+		Grid_continuous_property::iterator it = props_[i]->begin();
 
 		for ( ; it != props_[i]->end(); ++it) {
 			float v = *it;

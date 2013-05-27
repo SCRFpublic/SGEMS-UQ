@@ -2,11 +2,11 @@
 #define GENERATE_METRICS_ACTION_H_
 
 
-#include <GsTLAppli/actions/action.h> 
-//#include <GsTLAppli/actions/unary_action.h> 
-#include <GsTLAppli/grid/grid_model/grid_region_temp_selector.h>
-#include <GsTLAppli/grid/grid_model/grid_property.h>
-#include <GsTLAppli/grid/grid_model/rgrid.h>
+#include <actions/action.h> 
+//#include <actions/unary_action.h> 
+#include <grid/grid_region_temp_selector.h>
+#include <grid/grid_property.h>
+#include <grid/rgrid.h>
 #include <metrics_action_common.h>
 #include <MetricFilterCollection.h>
 #include <GenericKernels.h>
@@ -27,7 +27,7 @@ public:
   virtual bool exec( void );
 
 protected :
-	std::vector<GsTLGridProperty*> input_props_;
+	std::vector<Grid_continuous_property*> input_props_;
 	std::string grid_name_;
 	std::string metric_name_;
 	Geostat_grid* grid_;

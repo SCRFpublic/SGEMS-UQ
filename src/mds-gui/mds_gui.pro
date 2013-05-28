@@ -1,5 +1,5 @@
 TEMPLATE = lib
-TARGET = /home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/actions/MDS_gui
+TARGET = $$(SGEMS_AR2TECH_DIR)/plugins/actions/MDS_gui
 CONFIG += PLUGIN
 CONFIG += debug
 QT += core \
@@ -8,6 +8,7 @@ QT += core \
     opengl \
     sql
 LIBS += -L/usr/local/lib \
+    -L/home/aboucher/code-dev/VTK/lib \
     -lvtkCommonCore-6.0 \
     -lvtksys-6.0 \
     -lvtkGUISupportQt-6.0 \
@@ -28,12 +29,14 @@ LIBS += -L/usr/local/lib \
     -lvtkGUISupportQtSQL-6.0 \
     -lvtkGUISupportQtOpenGL-6.0 \
     -lvtkChartsCore-6.0
-INCLUDEPATH += /home/lewisli/code-dev/ar2tech-SGeMS-public
-INCLUDEPATH += /home/lewisli/code-dev/ar2tech-SGeMS-public/ar2GsTL
-INCLUDEPATH += /home/lewisli/code-dev/SGEMS-UQ/src/GsTL_item_model
-INCLUDEPATH += /home/lewisli/code-dev/SGEMS-UQ/src/sgems-metrics
+INCLUDEPATH += $$(SGEMS_AR2TECH_DIR)
+INCLUDEPATH += $$(SGEMS_AR2TECH_DIR)/ar2gems
+INCLUDEPATH += $$(SGEMS_AR2TECH_DIR)/ar2GsTL
+INCLUDEPATH += ../GsTL_item_model
+INCLUDEPATH += ../sgems-metrics
 INCLUDEPATH += /usr/local/include/vtk-6.0
-LIBS += -L/home/lewisli/code-dev/ar2tech-SGeMS-public/lib/linux \
+INCLUDEPATH += /home/aboucher/code-dev/VTK
+LIBS += -L$$(SGEMS_AR2TECH_DIR)/lib/linux \
     -lar2gems_actions \
     -lar2gems_appli \
     -lar2gems_gui \
@@ -44,8 +47,8 @@ LIBS += -L/home/lewisli/code-dev/ar2tech-SGeMS-public/lib/linux \
     -lar2gems_math \
     -lar2gems_utils \
     -lar2gems_widgets \
-    -L/home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/designer \
-    -L/home/lewisli/code-dev/ar2tech-SGeMS-public/plugins/Geostat \
+    -L$$(SGEMS_AR2TECH_DIR)/plugins/designer \
+    -L$$(SGEMS_AR2TECH_DIR)/plugins/Geostat \
     -lGsTL_item_model \
     -lsgems-metrics
 HEADERS += \
